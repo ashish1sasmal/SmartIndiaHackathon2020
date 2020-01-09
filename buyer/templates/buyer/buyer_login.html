@@ -1,7 +1,7 @@
 <html>
 
 <head>
-    <title>SIH</title>
+    <title>Buyer</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
@@ -15,16 +15,16 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="../../../index.html">Home<span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item active">
                     <a class="nav-link" href="#">Buyer</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Farmer</a>
+                    <a class="nav-link" href="../../../seller/templates/seller/seller_login.html">Farmer</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Logistics</a>
+                    <a class="nav-link" href="../../../logistics/templates/logistics/logistics_login.html">Logistics</a>
                 </li>
             </ul>
         </div>
@@ -39,6 +39,8 @@
                 <input type="text" placeholder="Last Name" id="lastname" required><br>
                 <label for="email">E-Mail</label><br>
                 <input type="email" placeholder="Email" id="email" required><br>
+                <label for="contact">Contact No.</label><br>
+                <input type="number" id="contact" placeholder="Contact Number"><br>
                 <label for="location">Location of Store</label><br>
                 <input type="text" placeholder="Location" id="location" required><br>
                 <label for="gst">GST Number</label><br>
