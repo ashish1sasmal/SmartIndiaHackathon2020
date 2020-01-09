@@ -30,17 +30,42 @@
         </div>
     </nav>
 
-    <section id="login">
-        <div class="container text-center mt-1">
-            <h1>LOGIN</h1>
-            <label for="username">User Name</label><br>
-            <input type="text" id="username" placeholder="User Name" required><br>
-            <label for="password">Password</label><br>
-            <input type="password" id="password" placeholder="Password" required><br>
-            <div class="mt-2">New User ?? <a href="seller_signup.html" id="open_signup">Sign Up</a></div>
-            <button type="button" class="btn btn-primary mt-4">Login</button>
-        </div>
+    <section id="sign_up">
+        <a name="buyer" class="login">
+            <div class="container text-center mt-1">
+                <h1>SIGN UP</h1>
+                <label for="firstname">First Name</label><br>
+                <input type="text" placeholder="First Name" id="firstname" required><br>
+                <label for="lastname">Last Name</label><br>
+                <input type="text" placeholder="Last Name" id="lastname" required><br>
+                <label for="contact">Contact No.</label><br>
+                <input type="number" id="contact" placeholder="Contact Number"><br>
+                <label for="district">District</label><br>
+                <input type="text" id="district" placeholder="District" required></input><br>
+                <label for="city">City</label><br>
+                <input type="text" id="city" placeholder="City" required><br>
+                <label for="state">State</label><br>
+                <input type="text" id="state" placeholder="State" required><br>
+                <label for="password">Enter a Password</label><br>
+                <input type="password" id="password" placeholder="Enter a Password"><br>
+                <label for="again password">ReEnter Password</label><br>
+                <input type="password" id="again password" placeholder="ReEnter Password"><br>
+                <div class="alert alert-danger" id="alert" role="alert" style="display: none ; width:auto">
+                    Passwords Did'nt Match ....Try Again
+                </div>
+                <div class="mt-2">Already Have Account.. <a href="seller_login.html" id="open_login">Login</a></div>
+                <button type="button" class="btn btn-primary mt-4" id="signup-button" onclick="final_signup()">Sign Up</button>
+            </div>
+        </a>
     </section>
+
+    <section id="signup_final">
+            <div class="container text-center mt-5">
+                <div>Your Username is: <span id="user_span"></span></div><br>
+                
+            </div> 
+        </section>
+
 
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"

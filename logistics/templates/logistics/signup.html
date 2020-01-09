@@ -31,16 +31,32 @@
         </div>
     </nav>
 
-    <section id="login">
-        <div class="container text-center mt-1">
-            <h1>LOGIN</h1>
-            <label for="username">User Name</label><br>
-            <input type="text" id="username" placeholder="User Name" required><br>
-            <label for="password">Password</label><br>
-            <input type="password" id="password" placeholder="Password" required><br>
-            <div class="mt-2">New User ?? <a href="signup.html" id="open_signup">Sign Up</a></div>
-            <button type="button" class="btn btn-primary mt-4">Login</button>
-        </div>
+    <section id="sign_up">
+        <a name="buyer" class="login">
+            <div class="container text-center mt-1">
+                <h1>SIGN UP</h1>
+                <label for="firstname">First Name</label><br>
+                <input type="text" placeholder="First Name" id="firstname" required><br>
+                <label for="lastname">Last Name</label><br>
+                <input type="text" placeholder="Last Name" id="lastname" required><br>
+                <label for="email">E-Mail</label><br>
+                <input type="email" id="email" placeholder="Email"><br>
+                <label for="contact">Contact No.</label><br>
+                <input type="number" id="contact" placeholder="Contact Number"><br>
+                <label for="mode">Mode Of Transport</label><br>
+                <input type="text" id="mode" placeholder="Enter Mode Of Transportation" required><br>
+                <label for="password">Enter a Password</label><br>
+                <input type="password" id="password" placeholder="Enter a Password"><br>
+                <label for="again password">ReEnter Password</label><br>
+                <input type="password" id="again password" placeholder="ReEnter Password"><br>
+                <div class="alert alert-danger" id="alert" role="alert" style="display: none ; width:auto">
+                    Passwords Did'nt Match ....Try Again
+                </div>
+                <div class="mt-2">Already Have Account.. <a href="logistics_login.html" id="open_login">Login</a></div>
+                <button type="button" class="btn btn-primary mt-4" id="signup-button" onclick="final_signup()">Sign
+                    Up</button>
+            </div>
+        </a>
     </section>
 
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
