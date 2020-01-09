@@ -18,10 +18,10 @@
                     <a class="nav-link" href="../../../index.html">Home<span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="../../../buyer/templates/buyer/buyer_login.html">Buyer</a>
+                    <a class="nav-link">Buyer</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="../../../seller/templates/seller/seller_login.html">Farmer</a>
+                    <a class="nav-link">Farmer</a>
                 </li>
                 <li class="nav-item active">
                     <a class="nav-link" href="#">Logistics</a>
@@ -45,18 +45,32 @@
                 <label for="mode">Mode Of Transport</label><br>
                 <input type="text" id="mode" placeholder="Enter Mode Of Transportation" required><br>
                 <div class="mt-2">Already Have Account.. <a href="#" id="open_login" onclick="login()">Login</a></div>
-                <button type="button" class="btn btn-primary mt-4">Sign Up</button>
+                <button type="button" class="btn btn-primary mt-4" onclick="ask_pass()">Next</button>
             </div>
         </a>
+    </section>
+
+    <section id="signup_final">
+        <div class="container text-center mt-5">
+            <div>Your Username is: <span id="user_span"></span></div><br>
+            <label for="password">Enter a Password</label><br>
+            <input type="password" id="password" placeholder="Enter a Password"><br>
+            <label for="again password">ReEnter Password</label><br>
+            <input type="password" id="again password" placeholder="ReEnter Password"><br>
+            <div class="alert alert-danger" id="alert" role="alert" style="display: none ; width:auto">
+                Passwords Did'nt Match ....Try Again
+            </div>
+            <button type="button" class="btn btn-primary mt-4" id="signup-button" onclick="final_signup()">Sign Up</button>
+        </div> 
     </section>
 
     <section id="login">
         <div class="container text-center mt-5">
             <h1>LOGIN</h1>
             <label for="username">User Name</label><br>
-            <input type="text" id="username" required><br>
+            <input type="text" id="username" placeholder="User Name" required><br>
             <label for="password">Password</label><br>
-            <input type="password" id="password" required><br>
+            <input type="password" id="password" placeholder="Password" required><br>
             <div class="mt-2">New User ?? <a href="#" id="open_signup" onclick="signup()">Sign Up</a></div>
             <button type="button" class="btn btn-primary mt-4">Login</button>
         </div>
