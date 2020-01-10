@@ -1,0 +1,1 @@
+web: gunicorn SIH2020.wsgi
