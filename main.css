@@ -1,7 +1,6 @@
 #nav1
 {  
-    opacity: 0.7; 
-    filter:(opacity=70);       
+    box-shadow: 10px 10px 10px;
 }
 img {
     height: 100vh;
@@ -9,4 +8,7 @@ img {
   .carousel-control .icon-prev, 
 .carousel-control .icon-next {
     font-size: 100px;
+}
+a{
+    color:black;
 }

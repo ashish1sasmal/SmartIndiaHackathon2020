@@ -2,46 +2,53 @@
 
 <head>
     <title>Seller</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link href="seller.css" type="text/css" rel="stylesheet"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="../../static/seller/css/seller.css" type="text/css" rel="stylesheet">
 </head>
 
 <body>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top mb-5" id="nav1">
-                <h3 class="Logo-text" style="color:black"><a href="../../../index.html" style="color:white ; text-decoration: none;">Ann Suraksha</a></h3>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="../../../index.html">Home<span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link">Buyer</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="seller/templates/seller/seller_login.html">Farmer</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link">Logistics</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-
-    <section id="login" class="mt-5">
-        <div class="container text-center mt-1">
-            <h1>LOGIN</h1>
-            <label for="username">User Name</label><br>
-            <input type="text" id="username" placeholder="User Name" required><br>
-            <label for="password">Password</label><br>
-            <input type="password" id="password" placeholder="Password" required><br>
-            <div class="mt-2">New User ?? <a href="seller_signup.html" id="open_signup">Sign Up</a></div>
-            <button type="button" class="btn btn-primary mt-4">Login</button>
+    <div id="login-image">
+        <img src="../../../images/login-portal.jpg">
+    </div>
+    <nav class="navbar navbar-expand-lg fixed-top bg-dark text-light" id="nav1">
+        <img src="../../../images/logo.png" style="height:70px ; width:70px ; opacity: 1 !important" />
+        <h3 class="Logo-text"><a href="../../../index.html"
+                style="color:white ; text-decoration: none; margin-left: 10px;">Ann Suraksha</a>
+        </h3>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="../../../index.html" style="color: white;">Home<span
+                            class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link">Buyer</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">Farmer</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link">Logistics</a>
+                </li>
+            </ul>
         </div>
-    </section>
+    </nav>
+
+    <div id="love" class="container text-center mt-1">
+        <h1 style="margin-top: 10%;">LOGIN</h1>
+        <label for="username">User Name</label><br>
+        <input type="text" id="username" placeholder="User Name" required><br>
+        <label for="password">Password</label><br>
+        <input type="password" id="password" placeholder="Password" required><br>
+        <div class="mt-2">New User ?? <a href="seller_signup.html" id="open_signup">Sign Up</a></div>
+        <button type="button" class="btn btn-primary mt-4">Login</button>
+    </div>
 
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
@@ -53,7 +60,7 @@
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
         crossorigin="anonymous"></script>
 
-        <script type="text/javascript" src="seller.js"></script>
+    <script type="text/javascript" src="seller.js"></script>
 </body>
 
 </html>
