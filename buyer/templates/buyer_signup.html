@@ -1,0 +1,41 @@
+{% extends 'home.html' %}
+{% block content %}
+                <section id="sign_up">
+        <a name="buyer" class="login">
+
+            <div class="container text-center mt-1">
+                <h1>SIGN UP</h1>
+                <form method="POST">
+                    {% csrf_token %}
+                <label for="firstname">First Name</label><br>
+                {{bform.first_name}}<br>
+                <label for="lastname">Last Name</label><br>
+                {{bform.last_name}}<br>
+                <label for="email">E-Mail</label><br>
+                {{form.email}}<br>
+                <label for="contact">Contact No.</label><br>
+                {{bform.phone}}<br>
+                <label for="gst">GST Number</label><br>
+                {{bform.gst_no}}<br>
+                <label for="company">Company Name</label><br>
+                {{bform.company_name}}<br>
+                <label for="password">Enter a Password</label><br>
+                {{form.password1}}<br>
+                <label for="again password">ReEnter Password</label><br>
+                {{form.password2}}<br>
+
+
+                <div class="alert alert-danger" id="alert" role="alert" style="display: none ; width:auto">
+                    Passwords Did'nt Match ....Try Again
+                </div>
+                <button type="submit" class="btn btn-primary mt-4" id="signup-button" >Sign Up</button>
+        </form>
+                <div class="mt-2">Already Have Account.. <a href="{% url 'buyer:buyerlogin' %}" id="open_login">Login</a></div>
+
+            </div>
+        </a>
+    </section>
+{% endblock content %}
+
+    
+

@@ -1,0 +1,20 @@
+{% extends 'home.html' %}
+{% block content %}
+                <section id="login">
+        <div class="container text-center mt-1">
+            <h1>LOGIN</h1>
+            <form method="POST">
+                {% csrf_token %}
+                 <label for="username">Email</label><br>
+                
+                <input type="text" id="username" placeholder="Email" name="email" required><br>
+                <label for="password">Password</label><br>
+                <input type="password" id="password" placeholder="Password" name="password" required><br>
+                
+                <button type="submit" class="btn btn-primary">LOGIN</button>
+            </form>
+            
+            <div class="mt-2 mb-2">New User ?? <a href="{%url 'buyer:buyersignup'%}" id="open_signup">Sign Up</a></div>
+        </div>
+    </section>
+{% endblock content %}
