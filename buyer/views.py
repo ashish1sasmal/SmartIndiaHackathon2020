@@ -1,23 +1,28 @@
 from django.shortcuts import render,redirect
-from .forms import UserForm,SellerSignupForm
+from .forms import UserForm,BuyerSignupForm
 from django.contrib import messages
 from django.contrib.auth import authenticate,login,logout
-
 from django.contrib.auth.decorators import login_required
+
 # Create your views here.
 
-    
+def home(request):
+    return render(request, 'home.html')
 
+@login_required
+def user_logout(request):
+    logout(request)
+    return redirect('buyer:home')
 
 def register(request):
     if request.method=="POST":
         form=UserForm(data=request.POST)
-        sform=SellerSignupForm(data=request.POST)
-        if form.is_valid() and sform.is_valid():
+        bform=BuyerSignupForm(data=request.POST)
+        if form.is_valid() and bform.is_valid():
             user=form.save(commit=False)
             user.username=form.cleaned_data['email']
             user.save()
-            profile=sform.save(commit=False)
+            profile=bform.save(commit=False)
             profile.user=user
             profile.save()
             messages.success(request,'Your account has been created !')
@@ -25,15 +30,16 @@ def register(request):
 
         else:
             print(form.errors)
-            print(sform.errors)
-            messages.error(request,'Invalid Input. Kindly Fill again !')
-            return redirect('buyer:home')
+            print(bform.errors)
+            messages.warning(request,form.errors)
+            messages.warning(request,bform.errors)
+            return redirect('buyer:buyersignup')
 
     else:
         form=UserForm()
-        sform=SellerSignupForm()
+        bform=BuyerSignupForm()
 
-    return render(request,'seller_signup.html',{'form':form,'sform':sform})
+    return render(request,'buyer_signup.html',{'form':form,'bform':bform})
 
 
 def user_login(request):
@@ -43,11 +49,11 @@ def user_login(request):
         print(email,password)
         user = authenticate(username=email, password=password)
         if user:
-            if user.is_active and user.sellerprofile.is_seller:
+            if user.is_active and user.buyerprofile.is_buyer:
                 login(request, user)
                 messages.success(request, f'You are logged in successfully!')
                 return redirect('buyer:home')
                 
         else:
             messages.error(request,'Please Check your username and password !')
-    return render(request,'seller_login.html')
+    return render(request,'buyer_login.html')

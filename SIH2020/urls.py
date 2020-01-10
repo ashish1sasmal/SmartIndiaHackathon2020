@@ -15,7 +15,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.conf.urls import include
+from buyer import views as bv
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('buyer/',include('buyer.urls')),
+    path('seller/',include('seller.urls')),
+    path('',bv.home),
+    path('logout/',bv.user_logout,name='logout'),
+    # path('logistic/',include('logistic.urls')),
 ]
