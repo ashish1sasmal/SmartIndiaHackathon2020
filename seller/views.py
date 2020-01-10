@@ -6,13 +6,8 @@ from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.decorators import login_required
 # Create your views here.
 
-def home(request):
-    return redirect('home')
     
-@login_required
-def user_logout(request):
-    logout(request)
-    return redirect('buyer:home')
+
 
 def register(request):
     if request.method=="POST":
@@ -48,7 +43,7 @@ def user_login(request):
         print(email,password)
         user = authenticate(username=email, password=password)
         if user:
-            if user.is_active:
+            if user.is_active and user.sellerprofile.is_seller:
                 login(request, user)
                 messages.success(request, f'You are logged in successfully!')
                 return redirect('buyer:home')

@@ -1,11 +1,18 @@
 from django.shortcuts import render,redirect
 from .forms import UserForm,BuyerSignupForm
 from django.contrib import messages
-from django.contrib.auth import authenticate,login
+from django.contrib.auth import authenticate,login,logout
+from django.contrib.auth.decorators import login_required
+
 # Create your views here.
 
 def home(request):
-    return render(request,'home.html')
+    return render(request, 'home.html')
+
+@login_required
+def user_logout(request):
+    logout(request)
+    return redirect('buyer:home')
 
 def register(request):
     if request.method=="POST":
@@ -39,10 +46,10 @@ def user_login(request):
         print(email,password)
         user = authenticate(username=email, password=password)
         if user:
-            if user.is_active:
+            if user.is_active and user.buyerprofile.is_buyer:
                 login(request, user)
                 messages.success(request, f'You are logged in successfully!')
-                return redirect('home')
+                return redirect('buyer:home')
                 
         else:
             messages.error(request,'Please Check your username and password !')

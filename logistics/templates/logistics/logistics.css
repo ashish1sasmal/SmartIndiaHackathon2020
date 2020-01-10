@@ -1,4 +1,8 @@
-
+#nav1
+{  
+    opacity: 0.7; 
+    filter:(opacity=70);       
+}
 h1{
     color:blue;
 }

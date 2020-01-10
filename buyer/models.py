@@ -15,6 +15,7 @@ class BuyerProfile(models.Model):
     phone=models.CharField(max_length=10)
     gst_no=models.IntegerField()
     company_name=models.CharField(max_length=30)
-
+    is_buyer=models.BooleanField(default=True)
+    is_seller=models.BooleanField(default=False)
     def __str__(self):
         return self.user.username
