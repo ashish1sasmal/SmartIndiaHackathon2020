@@ -29,8 +29,11 @@ def register(request):
             return redirect('buyer:home')
 
         else:
-            messages.error(request,'Invalid Input. Kindly Fill again !')
-            return redirect('buyer:home')
+            print(form.errors)
+            print(bform.errors)
+            messages.warning(request,form.errors)
+            messages.warning(request,bform.errors)
+            return redirect('buyer:buyersignup')
 
     else:
         form=UserForm()
