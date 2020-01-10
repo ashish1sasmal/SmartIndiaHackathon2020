@@ -23,10 +23,9 @@ from django.conf.urls.static import static
 from home import views as hv
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('buyer/',include('buyer.urls')),
+    path('buyer/',include(('buyer.urls','buyer'),namespace='buyer')),
     path('seller/',include('seller.urls')),
-    path('',bv.home),
-    path('hom/',hv.hom),
-    path('logout/',bv.user_logout,name='logout'),
+    path('',include('home.urls')),
+    path('logout/',hv.user_logout,name='logout'),
     # path('logistic/',include('logistic.urls')),
 ]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

@@ -6,7 +6,7 @@
     <title>Ann Suraksha</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
-    <link href="{% static 'css/main.css' %}" type="text/css" rel="stylesheet" />
+    <link href="{% static 'home/css/main.css' %}" type="text/css" rel="stylesheet" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css"
         integrity="sha384-REHJTs1r2ErKBuJB0fCK99gCYsVjwxHrSU0N7I1zl9vZbggVJXRMsv/sLlOAGb4M" crossorigin="anonymous" />
         <link href="../static/css/main.css" type="text/css" rel="stylesheet">
@@ -34,13 +34,29 @@
                 <li class="nav-item">
                     <a class="nav-link" href="../../logistics/templates/logistics/logistics_login.html">Logistics</a>
                 </li>
+                {% if user.is_authenticated %}
+                <li class="nav-item">
+                    <a class="nav-item nav-link" href="#">Profile</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a>
+                </li>
+
+                {% endif %}
                 <li class="nav-item">
                     <a class="nav-link" href="about-us.html">About Us</a>
                 </li>
             </ul>
         </div>
     </nav>
+    {% if messages %}
+    {% for message in messages %}
+    <div class="alert alert-{{message.tags}}">{{message}}</div>
+    {% endfor %}
 
+    {% endif %}
+    {% block content %}{% endblock %}
     <section id="hero-section">
         <div id="carouselExampleCaptions" class="carousel slide carousel-fade" data-ride="carousel">
             <ol class="carousel-indicators">

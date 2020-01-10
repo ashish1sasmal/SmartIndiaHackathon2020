@@ -1,3 +1,5 @@
+{% load static %}
+
 <html>
 
 <head>
@@ -10,11 +12,11 @@
 
 <body>
     <div id="login-image">
-        <img src="../../../images/login-portal.jpg">
+        <img src="{% static 'seller/images/login-portal.jpg">
     </div>
     <nav class="navbar navbar-expand-lg fixed-top bg-dark text-light" id="nav1">
-        <img src="../../../images/logo.png" style="height:70px ; width:70px ; opacity: 1 !important" />
-        <h3 class="Logo-text"><a href="../../../index.html"
+        <img src="{% static 'seller/images/logo.png' %}" style="height:70px ; width:70px ; opacity: 1 !important" />
+        <h3 class="Logo-text"><a href="{% url 'home' %}"
                 style="color:white ; text-decoration: none; margin-left: 10px;">Ann Suraksha</a>
         </h3>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
@@ -24,11 +26,11 @@
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="../../../index.html" style="color: white;">Home<span
+                    <a class="nav-link" href="{% url 'home' %}" style="color: white;">Home<span
                             class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link">Buyer</a>
+                    <a class="nav-link" href="{% url 'buyer:buyerlogin' %}">Buyer</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link active" href="#">Farmer</a>
@@ -39,6 +41,12 @@
             </ul>
         </div>
     </nav>
+    {% if messages %}
+    {% for message in messages %}
+    <div class="alert alert-{{message.tags}}">{{message}}</div>
+    {% endfor %}
+
+    {% endif %}
 
     <div id="love" class="container text-center mt-1">
         <h1 style="margin-top: 10%;">LOGIN</h1>
@@ -52,7 +60,7 @@
 
             <button type="submit" class="btn btn-primary">LOGIN</button>
         </form>
-        <div class="mt-2">New User ?? <a href="seller_signup.html" id="open_signup">Sign Up</a></div>
+        <div class="mt-2">New User ?? <a href="{% url 'seller:sellersignup' %}" id="open_signup">Sign Up</a></div>
 
     </div>
 
