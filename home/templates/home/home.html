@@ -14,7 +14,7 @@
 <body>
     <nav class="navbar navbar-expand-lg fixed-top" id="nav1" style="background-color: #fff">
         <img src="{% static 'home/images/logo.png' %}" style="height:70px ; width:70px ; opacity: 1 !important">
-        <h3 class="Logo-text pl-2 pt-1"><a href="../../../index.html" style="color:black ; text-decoration: none;">Ann Suraksha</a></h3>
+        <h3 class="Logo-text pl-2 pt-1"><a href="{% url 'home' %}" style="color:black ; text-decoration: none;">Ann Suraksha</a></h3>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -32,6 +32,9 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="logistics/templates/logistics/logistics_login.html">Logistics</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'check' %}" style="color:red">Realtime Mandi Price</a>
                 </li>
                 {% if user.is_authenticated %}
                 <li class="nav-item">
