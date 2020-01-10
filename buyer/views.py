@@ -26,11 +26,11 @@ def register(request):
             profile.user=user
             profile.save()
             messages.success(request,'Your account has been created !')
-            return redirect('home')
+            return redirect('buyer:home')
 
         else:
             messages.error(request,'Invalid Input. Kindly Fill again !')
-            return redirect('home')
+            return redirect('buyer:home')
 
     else:
         form=UserForm()
