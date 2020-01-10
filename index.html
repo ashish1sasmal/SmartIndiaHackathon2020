@@ -117,6 +117,9 @@
         </div>
     </section>
 
+    <button class="btn rounded-pill bg-primary" onclick="chat()" id="chat-button">Chat</button>
+    <iframe height="430" width="350" allow="microphone;" src="https://console.dialogflow.com/api-client/demo/embedded/annSuraksha" style="display: none" id="chat-iframe"></iframe>
+
     <section id="abouts-us">
         <div class="grid mt-5 container mb-5" style="height: 24em;">
             <div class="card mb-10" style="height:100% ">
@@ -197,7 +200,10 @@
         crossorigin="anonymous"></script>
 
     <script type="text/javascript">
-
+        function chat(){
+            document.getElementById('chat-button').style.display="none"
+            document.getElementById('chat-iframe').style.display="block"
+        }
     </script>
 </body>
 
