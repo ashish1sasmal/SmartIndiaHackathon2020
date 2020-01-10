@@ -6,7 +6,7 @@ from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.decorators import login_required
 # Create your views here.
 
-    
+
 
 
 def register(request):
@@ -21,19 +21,19 @@ def register(request):
             profile.user=user
             profile.save()
             messages.success(request,'Your account has been created !')
-            return redirect('buyer:home')
+            return redirect('home')
 
         else:
             print(form.errors)
             print(sform.errors)
             messages.error(request,'Invalid Input. Kindly Fill again !')
-            return redirect('buyer:home')
+            return redirect('home')
 
     else:
         form=UserForm()
         sform=SellerSignupForm()
 
-    return render(request,'seller_signup.html',{'form':form,'sform':sform})
+    return render(request,'seller/seller_signup.html',{'form':form,'sform':sform})
 
 
 def user_login(request):
@@ -46,8 +46,8 @@ def user_login(request):
             if user.is_active and user.sellerprofile.is_seller:
                 login(request, user)
                 messages.success(request, f'You are logged in successfully!')
-                return redirect('buyer:home')
-                
+                return redirect('home')
+
         else:
             messages.error(request,'Please Check your username and password !')
-    return render(request,'seller_login.html')
+    return render(request,'seller/seller_login.html')
