@@ -32,6 +32,9 @@
                     <a class="nav-link" href="../../seller/templates/seller_login.html">Farmer</a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link" href="{% url 'check' %}" style="color:red">RealTime Mandi price</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="../../logistics/templates/logistics/logistics_login.html">Logistics</a>
                 </li>
                 {% if user.is_authenticated %}
