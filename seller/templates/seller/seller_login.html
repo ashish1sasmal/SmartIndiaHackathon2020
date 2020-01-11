@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    <div id="login-image">
+    <!--<div id="login-image">
         <img src="{% static 'seller/images/login-portal.jpg">
     </div>
     <nav class="navbar navbar-expand-lg fixed-top bg-dark text-light" id="nav1">
@@ -40,10 +40,51 @@
                 </li>
             </ul>
         </div>
-    </nav>
+    </nav>-->
+
+    <div class="navbar" style="background-color: #24b59d">
+        <div class="container-fluid">
+            <div class="logo">
+                <img src="../../../seller/static/seller/images/logo.png" style="height:50px ; width:50px">
+                <h1 style="float:right; color: black;">&nbspAnn Suraksha</h1>
+            </div>
+            <div class="toggle" style="background-color: #00BCD4;">
+                <span style="background-color: white;"></span>
+                <span style="background-color: white;"></span>
+                <span style="background-color: white;"></span>
+                <span style="background-color: white;"></span>
+            </div>
+            <div class="links">
+                <ul>
+                    <li style="display:inline-block ; padding:15px ; font-size:1.3em">
+                        <img src="../../static/seller/images/home-icon.png" style="height: 25px ; width:25px">
+                        <a href="home.html">&nbspHome</a>
+                    </li>
+                    <li style="display:inline-block ; padding:15px ; font-size:1.3em">
+                        <img src="../../static/seller/images/farmer-icon.png" style="height: 25px ; width:25px;">
+                        <a href="../../../seller/templates/seller/seller_login.html">Seller</a>
+                    </li>
+                    <li style="display:inline-block ; padding:15px ; font-size:1.3em">
+                        <img src="../../static/seller/images/warehouse-icon.png" style="height: 25px ; width:25px;">
+                        <a href="../../../buyer/templates/buyer/buyer_login.html">&nbspBuyer</a>
+                    </li>
+                    <li style="display:inline-block ; padding:15px ; font-size:1.3em">
+                        <img src="../../static/seller/images/logistics-icon.png" style="height: 25px ; width:25px">
+                        <a href="../../../logistics/templates/logistics/logistics_login.html">&nbspLogistics</a>
+                    </li>
+                    <li style="display:inline-block ; padding:15px ; font-size:1.3em">
+                        <img src="../../static/seller/images/aboutus-icon.png" style="height: 25px ; width:25px">
+                        <a href="about-us.html">&nbspAbout Us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <img src="{% static 'seller/images/login-portal.jpg">
+
     {% if messages %}
     {% for message in messages %}
-    <div class="alert alert-{{message.tags}}">{{message}}</div>
+    <div class=" alert alert-{{message.tags}}">{{message}}</div>
     {% endfor %}
 
     {% endif %}
@@ -52,7 +93,7 @@
         <h1 style="margin-top: 10%;">LOGIN</h1>
         <form method="POST">
             {% csrf_token %}
-             <label for="username">Email</label><br>
+            <label for="username">Email</label><br>
 
             <input type="text" id="username" placeholder="Email" name="email" required><br>
             <label for="password">Password</label><br>

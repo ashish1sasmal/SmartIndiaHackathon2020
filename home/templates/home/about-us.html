@@ -14,44 +14,44 @@
 
 <body>
     <section>
-        <nav class="navbar navbar-expand-lg fixed-top" id="nav1" style="background-color: #fff">
-            <img src="../static/images/logo.png" style="height:70px ; width:70px ; opacity: 1 !important">
-            <h3 class="Logo-text pl-2 pt-1"><a href="../../../index.html"
-                    style="color:black ; text-decoration: none;">Ann Suraksha</a></h3>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="home.html">Home<span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Buyer</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="../../seller/templates seller_login.html">Farmer</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="../../logistics/templates/logistics/logistics_login.html">Logistics</a>
-                    </li>
-                    {% if user.is_authenticated %}
-                    <li class="nav-item">
-                        <a class="nav-item nav-link" href="#">Profile</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a>
-                    </li>
-
-                    {% endif %}
-                    <li class="nav-item active">
-                        <a class="nav-link" href="about-us.html">About Us</a>
-                    </li>
-                </ul>
+        <div class="navbar" style="background-color: #24b59d">
+            <div class="container-fluid">
+                <div class="logo">
+                    <img src="../../../seller/static/seller/images/logo.png" style="height:50px ; width:50px">
+                    <h1 style="float:right">&nbspAnn Suraksha</h1>
+                </div>
+                <div class="toggle" style="background-color: #00BCD4;">
+                    <span style="background-color: white;"></span>
+                    <span style="background-color: white;"></span>
+                    <span style="background-color: white;"></span>
+                    <span style="background-color: white;"></span>
+                </div>
+                <div class="links">
+                    <ul>
+                        <li style="display:inline-block ; padding:15px ; font-size:1.3em">
+                            <img src="../../static/images/home-icon.png" style="height: 25px ; width:25px">
+                            <a href="home.html">&nbspHome</a>
+                        </li>
+                        <li style="display:inline-block ; padding:15px ; font-size:1.3em">
+                            <img src="../../static/images/farmer-icon.png" style="height: 25px ; width:25px;">
+                            <a href="../../../seller/templates/seller/seller_login.html">Seller</a>
+                        </li>
+                        <li style="display:inline-block ; padding:15px ; font-size:1.3em">
+                            <img src="../../static/images/warehouse-icon.png" style="height: 25px ; width:25px;">
+                            <a href="../../../buyer/templates/buyer/buyer_login.html">&nbspBuyer</a>
+                        </li>
+                        <li style="display:inline-block ; padding:15px ; font-size:1.3em">
+                            <img src="../../static/images/logistics-icon.png" style="height: 25px ; width:25px">
+                            <a href="../../../logistics/templates/logistics/logistics_login.html">&nbspLogistics</a>
+                        </li>
+                        <li style="display:inline-block ; padding:15px ; font-size:1.3em">
+                            <img src="../../static/images/aboutus-icon.png" style="height: 25px ; width:25px">
+                            <a href="about-us.html">&nbspAbout Us</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-        </nav>
+        </div>
     </section>
 
     <section class="mt-5">
@@ -66,7 +66,8 @@
                 first time on mobile, it is time they reap its benefits. We are building this future with our fully
                 integrated and tech enabled supply chain that enables farmers PAN India to earn more by selling their
                 produce directly to businesses.<br><br>
-                We’re building a future where farmers are businessmen, and not just growers. We want you to be a part of it.
+                We’re building a future where farmers are businessmen, and not just growers. We want you to be a part of
+                it.
             </p>
         </div>
     </section>
@@ -75,15 +76,18 @@
         <div class="container-fluid">
             <div class="row" style="width:99%">
                 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                    <h4><span style="position: relative ; left:16%">Ann</span><br><span style="position: relative ; left:4%">Suraksha</span></h4>
-                    <img src="../static/images/logo.png" style="height: 50px ; width:50px ; position: relative ; left:15%">
+                    <h4><span style="position: relative ; left:16%">Ann</span><br><span
+                            style="position: relative ; left:4%">Suraksha</span></h4>
+                    <img src="../static/images/logo.png"
+                        style="height: 50px ; width:50px ; position: relative ; left:15%">
                 </div>
                 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                     <nav class="nav flex-column">
                         <a class="nav-link" href="../../seller/templates/seller_login.html"
-                        style="color:white">Farmers</a>
+                            style="color:white">Farmers</a>
                         <a class="nav-link" href="#" style="color:white">Buyer</a>
-                        <a class="nav-link" href="../../logistics/templates/logistics/logistics_login.html" style="color:white">Logistics</a>
+                        <a class="nav-link" href="../../logistics/templates/logistics/logistics_login.html"
+                            style="color:white">Logistics</a>
                     </nav>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
@@ -91,7 +95,8 @@
                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-right">
                     <h4>For Help</h4>
                     <a href="tel:18001801551" style="color:white">1800-180-1551</a><br>
-                    <a href="http://agriculture.gov.in/" target="_blank" style="color: blue !important;">http://agriculture.gov.in/</a>
+                    <a href="http://agriculture.gov.in/" target="_blank"
+                        style="color: blue !important;">http://agriculture.gov.in/</a>
                 </div>
             </div>
         </div>
