@@ -19,9 +19,114 @@
 
     <link href="../../static/seller/css/seller_dashboard.css" type="text/css" rel="stylesheet">
 
+    <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+    <script>
+        function openSlideMenu() {
+            document.getElementById('menu').style.width = '250px';
+            document.getElementById('content').style.marginLeft = '250px';
+        }
+        function closeSlideMenu() {
+            document.getElementById('menu').style.width = '0';
+            document.getElementById('content').style.marginLeft = '0';
+        }
+    </script>
+
 </head>
 
 <body>
+    <!--<section>
+
+        <nav class="navbar navbar-expand-lg fixed-top" id="nav1" style="background-color: #fff">
+            <img src="../static/images/logo.png" style="height:70px ; width:70px ; opacity: 1 !important">
+            <h3 class="Logo-text pl-2 pt-1"><a href="../../../index.html"
+                    style="color:black ; text-decoration: none;">Ann
+                    Suraksha</a></h3>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link">Home<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Buyer</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../../seller/templates/seller_login.html">Farmer</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'check' %}" style="color:red">RealTime Mandi price</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link"
+                            href="../../logistics/templates/logistics/logistics_login.html">Logistics</a>
+                    </li>
+                    {% if user.is_authenticated %}
+                    <li class="nav-item">
+                        <a class="nav-item nav-link" href="#">Profile</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a>
+                    </li>
+
+                    {% endif %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="about-us.html">About Us</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </section>-->
+
+    <div id="content">
+
+        <span class="slide">
+            <a href="#" onclick="openSlideMenu()">
+                <i class="fas fa-bars"></i>
+            </a>
+        </span>
+
+        <div id="menu" class="nav">
+            <a href="#" class="close" onclick="closeSlideMenu()">
+                <i class="fas fa-times"></i>
+            </a>
+            <a href="#">Home</a>
+            <!--<a href="#">About</a>-->
+            <a href="#">Services</a>
+            <a href="#">Portfolio</a>
+            <a href="#">Contact</a>
+        </div>
+
+        <h1>Responsive Animated Sidebar Menu</h1>
+
+
+        <!--- Check out w3newbie Templates & Courses! -->
+        <div style="float:left; max-width: 45%; margin: .5rem; padding: 0; border: .5rem solid #666;">
+            <a href="https://w3newbie.com/templates/" target="_blank"
+                style="z-index: 100; cursor: pointer!important;"><img
+                    src="https://www.w3newbie.com/wp-content/uploads/w3newbie-templates-zip.png"
+                    style="max-width: 100%; min-width: 100%;"></a>
+        </div>
+        <div style="float:left; max-width: 45%; margin: .5rem; padding: 0; border: .5rem solid #666;">
+            <a href="https://w3newbie.com/courses/" target="_blank"
+                style="z-index: 100; cursor: pointer!important;"><img
+                    src="https://www.w3newbie.com/wp-content/uploads/w3newbie-courses-zip.png"
+                    style="max-width: 100%; min-width: 100%;"></a>
+        </div>
+        <br style="clear: both;">
+        <div style="max-width: 52%; margin: 2rem auto; padding: 0; border: .5rem solid #666;">
+            <a href="https://w3newbie.com/hosting/" target="_blank"
+                style="z-index: 100; cursor: pointer!important;"><img
+                    src="https://www.w3newbie.com/wp-content/uploads/web-hosting-zip.jpg"
+                    style="max-width: 100%; min-width: 100%;"></a>
+        </div>
+        <!--- Check out w3newbie Templates & Courses! -->
+
+    </div>
+
 
 
 </body>
