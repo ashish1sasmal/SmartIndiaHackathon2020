@@ -12,3 +12,6 @@ img {
 a{
     color:white;
 }
+#realtime-price:hover{
+    text-shadow: 5px 5px 5px;
+}
