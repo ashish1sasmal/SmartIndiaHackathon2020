@@ -7,29 +7,7 @@
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-        crossorigin="anonymous"></script>
-
     <link href="../../static/seller/css/seller_dashboard.css" type="text/css" rel="stylesheet">
-
-    <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
-    <script>
-        function openSlideMenu() {
-            document.getElementById('menu').style.width = '250px';
-            document.getElementById('content').style.marginLeft = '250px';
-        }
-        function closeSlideMenu() {
-            document.getElementById('menu').style.width = '0';
-            document.getElementById('content').style.marginLeft = '0';
-        }
-    </script>
 
 </head>
 
@@ -81,6 +59,47 @@
         </nav>
     </section>-->
 
+    <section>
+        <div class="navbar" style="background-color: #24b59d">
+            <div class="container-fluid">
+                <div class="logo">
+                    <img src="../../../seller/static/seller/images/logo.png" style="height:50px ; width:50px">
+                    <h1 style="float:right">&nbspAnn Suraksha</h1>
+                </div>
+                <div class="toggle" style="background-color: #00BCD4;">
+                    <span style="background-color: white;"></span>
+                    <span style="background-color: white;"></span>
+                    <span style="background-color: white;"></span>
+                    <span style="background-color: white;"></span>
+                </div>
+                <div class="links">
+                    <ul>
+                        <li style="display:inline-block ; padding:15px ; font-size:1.3em">
+                            <img src="../../static/seller/images/home-icon.png" style="height: 25px ; width:25px">
+                            <a href="home.html">&nbspHome</a>
+                        </li>
+                        <li style="display:inline-block ; padding:15px ; font-size:1.3em">
+                            <img src="../../static/seller/images/farmer-icon.png" style="height: 25px ; width:25px;">
+                            <a href="../../../seller/templates/seller/seller_login.html">Seller</a>
+                        </li>
+                        <li style="display:inline-block ; padding:15px ; font-size:1.3em">
+                            <img src="../../static/seller/images/warehouse-icon.png" style="height: 25px ; width:25px;">
+                            <a href="../../../buyer/templates/buyer/buyer_login.html">&nbspBuyer</a>
+                        </li>
+                        <li style="display:inline-block ; padding:15px ; font-size:1.3em">
+                            <img src="../../static/seller/images/logistics-icon.png" style="height: 25px ; width:25px">
+                            <a href="../../../logistics/templates/logistics/logistics_login.html">&nbspLogistics</a>
+                        </li>
+                        <li style="display:inline-block ; padding:15px ; font-size:1.3em">
+                            <img src="../../static/seller/images/aboutus-icon.png" style="height: 25px ; width:25px">
+                            <a href="about-us.html">&nbspAbout Us</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <div id="content">
 
         <span class="slide">
@@ -93,42 +112,114 @@
             <a href="#" class="close" onclick="closeSlideMenu()">
                 <i class="fas fa-times"></i>
             </a>
-            <a href="#">Home</a>
-            <!--<a href="#">About</a>-->
-            <a href="#">Services</a>
-            <a href="#">Portfolio</a>
-            <a href="#">Contact</a>
+            <a
+                href="#">Dashboard&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</a>
+            <a href="#space-reservation">Space Reservation&nbsp&nbsp</a>
+            <a
+                href="#">Complete&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</a>
+            <a
+                href="#">InProgress&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</a>
         </div>
 
-        <h1>Responsive Animated Sidebar Menu</h1>
+        <section class="menu-section" id="dashboard">
 
+        </section>
 
-        <!--- Check out w3newbie Templates & Courses! -->
-        <div style="float:left; max-width: 45%; margin: .5rem; padding: 0; border: .5rem solid #666;">
-            <a href="https://w3newbie.com/templates/" target="_blank"
-                style="z-index: 100; cursor: pointer!important;"><img
-                    src="https://www.w3newbie.com/wp-content/uploads/w3newbie-templates-zip.png"
-                    style="max-width: 100%; min-width: 100%;"></a>
-        </div>
-        <div style="float:left; max-width: 45%; margin: .5rem; padding: 0; border: .5rem solid #666;">
-            <a href="https://w3newbie.com/courses/" target="_blank"
-                style="z-index: 100; cursor: pointer!important;"><img
-                    src="https://www.w3newbie.com/wp-content/uploads/w3newbie-courses-zip.png"
-                    style="max-width: 100%; min-width: 100%;"></a>
-        </div>
-        <br style="clear: both;">
-        <div style="max-width: 52%; margin: 2rem auto; padding: 0; border: .5rem solid #666;">
-            <a href="https://w3newbie.com/hosting/" target="_blank"
-                style="z-index: 100; cursor: pointer!important;"><img
-                    src="https://www.w3newbie.com/wp-content/uploads/web-hosting-zip.jpg"
-                    style="max-width: 100%; min-width: 100%;"></a>
-        </div>
-        <!--- Check out w3newbie Templates & Courses! -->
+        <section class="menu-section" id="complete">
+
+        </section>
+
+        <section class="menu-section" id="inprogress">
+
+        </section>
+
+        <section class="menu-section" id="space-reservation" name="space-reservation">
+            <h2 class="text-center">Space Reservation Request</h2>
+            <hr>
+            <div class="container" style="-webkit-box-shadow: 0 0 10px #000;
+            box-shadow: 0 0 10px #000;">
+                <div class="row pt-4 pb-4">
+                    <div class="col-lg-6 text-center">
+                        <form>
+                            <label for="warehous-type">WareHouse Type:</label><br>
+                            <select name="warehouse-type" required>
+                                <option>-------Select Option-------</option>
+                                <option>Government</option>
+                                <option>Private</option>
+                                <option>Semi-Private</option>
+                                <option>None</option>
+                            </select>
+                        </form>
+                    </div>
+                    <div class="col-lg-6">
+                        <form>
+                            <label for="region">Where You Want To Sell</label><br>
+                            <input type="text" id="region" name="region" placeholder="Region"><br><br>
+                            <button class="btn btn-success ml-5" onclick="next()">Next</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="container mt-4" style="display: none ; -webkit-box-shadow: 0 0 10px #000; box-shadow: 0 0 10px #000;" id="second-div">
+                <div class="container w-50 pt-4 pb-4">
+                    <div class="card mb-3 text-center" style="max-width: 540px;">
+                        <div class="row no-gutters">
+                            <div class="col-md-4">
+                                <img src="../../static/seller/images/login-portal.jpg" class="card-img">
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h5 class="card-title">Card title</h5>
+                                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card mb-3 text-center" style="max-width: 540px;">
+                        <div class="row no-gutters">
+                            <div class="col-md-4">
+                                <img src="../../static/seller/images/login-portal.jpg" class="card-img">
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h5 class="card-title">Card title</h5>
+                                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                
+            </div>
+        </section>
 
     </div>
 
+    <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+    <script>
+        function openSlideMenu() {
+            document.getElementById('menu').style.width = '250px';
+            document.getElementById('content').style.marginLeft = '250px';
+        }
+        function closeSlideMenu() {
+            document.getElementById('menu').style.width = '0';
+            document.getElementById('content').style.marginLeft = '0';
+        }
+        function next() {
+            document.getElementById('second-div').style.display = "block"
+        }
+    </script>
 
-
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>

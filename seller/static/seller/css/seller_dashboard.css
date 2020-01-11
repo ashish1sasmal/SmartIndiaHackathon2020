@@ -11,7 +11,7 @@ body {
 	z-index: 1;
 	top: 0;
 	left: 0;
-	background-color: #111;
+	background-color: #333333;
 	opacity: .9;
 	overflow-x: hidden;
 	padding-top: 60px;
@@ -22,9 +22,10 @@ body {
 	padding: 20px 30px;
 	font-size: 25px;
 	text-decoration: none;
-	color: #ccc;
+	color: #fff;
 }
 .nav a:hover {
+	background-color: #24b59d;
 	color: #fff;
 	transition: 0.4s;
 }
@@ -36,7 +37,7 @@ body {
 	font-size: 30px
 }
 .slide a {
-	color: #000;
+	color: #24b59d;
 	font-size: 36px;
 }
 #content {
@@ -44,4 +45,7 @@ body {
 	transition: margin-left 0.7s;
 	overflow: hidden;
 	width: 100%;
+}
+.navbar .container-fluid .links ul li a{
+	color:black
 }
