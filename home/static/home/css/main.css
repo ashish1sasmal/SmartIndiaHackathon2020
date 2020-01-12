@@ -1,4 +1,3 @@
-
 #nav1
 {
     box-shadow: 10px 10px 10px;
@@ -14,10 +13,10 @@ a{
     color:white;
 }
 
-li{
-  font-color:white;
-<<<<<<< HEAD
+ul li:hover a {
+     color: #1ec76a;
 }
+
 
 /* Container holding the image and the text */
 .centered {
@@ -27,6 +26,3 @@ li{
   transform: translate(-50%, -50%);
   color:white;
 }
-=======
-}
->>>>>>> 04fb9cac73151684d858991fc4b34d954fda81f4

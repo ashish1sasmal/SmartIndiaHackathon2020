@@ -25,7 +25,7 @@ SECRET_KEY = '373a959de66103f1982e12d234d6690834287490b2eabdc8'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["annsuraksha.herokuapp.com",'127.0.0.1']
+ALLOWED_HOSTS = ["annsuraksha.herokuapp.com",'127.0.0.1',"localhost"]
 
 
 # Application definition
@@ -42,6 +42,12 @@ INSTALLED_APPS = [
     'logistic',
     'home'
 ]
+
+
+
+GOOGLE_RECAPTCHA_SECRET_KEY = '6LcprM4UAAAAACMZf9KHDKYytI5crP-P5_9iGdLu'
+SILENCED_SYSTEM_CHECKS = ['captcha.recaptcha_test_key_error']
+RECAPTCHA_DOMAIN = 'www.recaptcha.net'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
