@@ -102,7 +102,7 @@ def user_login(request):
             if user.is_active and user.sellerprofile.is_seller:
                 login(request, user)
                 messages.success(request, f'You are logged in successfully!')
-                return redirect('home')
+                return redirect('seller:dashboard')
 
         else:
             messages.error(request,'Please Check your username and password !')
