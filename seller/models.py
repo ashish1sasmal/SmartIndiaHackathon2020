@@ -16,6 +16,7 @@ class SellerProfile(models.Model):
     city=models.CharField(max_length=20)
     district=models.CharField(max_length=20)
     state=models.CharField(max_length=20)
+    pin=models.CharField(max_length=6,default='')
     aadhar=models.CharField(max_length=12)
     is_buyer=models.BooleanField(default=False)
     is_seller=models.BooleanField(default=True)

@@ -117,8 +117,9 @@
                 <i class="fas fa-times"></i>
             </a>
             <a
-                href="#">Dashboard&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</a>
-            <a href="#space-reservation" onclick="sell_click()">Sell
+                href="#">
+                Dashboard&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</a>
+            <a href="{% url 'seller:sell' %}" onclick="sell_click()">Sell
                 Commodity&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</a>
             <a
                 href="#">Complete&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</a>
@@ -138,101 +139,7 @@
 
         </section>
 
-        <section class="menu-section" id="sell" name="space-reservation" style="display: none;">
-            <h2 class="text-center">Sell Commodity</h2>
-            <hr>
-            <div class="container" style="-webkit-box-shadow: 0 0 10px #000;
-            box-shadow: 0 0 10px #000;">
-                <div class="row pt-4 pb-4">
-                    <div class="col-lg-6 text-center">
-                        <form>
-                            <label for="warehous-type">WareHouse Type:</label><br>
-                            <select name="warehouse-type" required>
-                                <option>-------Select Option-------</option>
-                                <option>Government</option>
-                                <option>Private</option>
-                                <option>Semi-Private</option>
-                                <option>None</option>
-                            </select>
-                        </form>
-                    </div>
-                    <div class="col-lg-6 text-center">
-                        <form>
-                            <label for="region">Where You Want To Sell</label><br>
-                            <input type="text" id="region" name="region" placeholder="Region"><br><br>
-                            <button class="btn btn-success ml-5" onclick="next()">Next</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-            <div class="container mt-4 pb-4"
-                style="display: none ; -webkit-box-shadow: 0 0 10px #000; box-shadow: 0 0 10px #000;" id="second-div">
-                <div class="container w-50 pt-4 pb-4">
-                    <div class="card mb-3 text-center" style="max-width: 540px;">
-                        <div class="row no-gutters">
-                            <div class="col-md-4">
-                                <img src="../../static/seller/images/login-portal.jpg" class="card-img">
-                            </div>
-                            <div class="col-md-8">
-                                <div class="card-body">
-                                    <h5 class="card-title">Card title</h5>
-                                    <p class="card-text">This is a wider card with supporting text below as a natural
-                                        lead-in to additional content. This content is a little bit longer.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card mb-3 text-center" style="max-width: 540px;">
-                        <div class="row no-gutters">
-                            <div class="col-md-4">
-                                <img src="../../static/seller/images/login-portal.jpg" class="card-img">
-                            </div>
-                            <div class="col-md-8">
-                                <div class="card-body">
-                                    <h5 class="card-title">Card title</h5>
-                                    <p class="card-text">This is a wider card with supporting text below as a natural
-                                        lead-in to additional content. This content is a little bit longer.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-6 text-center">
-                            <form>
-                                <label for="quantity">Quantity(in Quintals):</label><br>
-                                <input type="number" name="quantity" id="quantity" placeholder="Quantity"><br><br>
-                                <label for="contact-person">Contact Person</label><br>
-                                <input type="text" name="contact-person" id="contact-person"
-                                    placeholder="Conact Person">
-                            </form>
-                        </div>
-                        <div class="col-lg-6 text-center">
-                            <form>
-                                <label for="commodity">Commodity:</label><br>
-                                <select id="commodity">
-                                    <option>-------Select Commodity-------</option>
-                                    <option>Fruits</option>
-                                    <option>Vegetables</option>
-                                    <option>Medicinal</option>
-                                    <option>Dairy</option>
-                                    <option>Grains</option>
-                                    <option>BioFuel</option>
-                                    <option>Animals</option>
-                                    <option>Plants</option>
-                                    <option>None</option>
-                                </select><br><br>
-                                <label for="date">When Will You be able to sell the goods</label><br>
-                                <input type="date" id="date" name="date"><br><br>
-                                <button class="btn bg-success" style="color: white;">Submit</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
 
     </div>
 
