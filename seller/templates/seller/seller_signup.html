@@ -1,115 +1,41 @@
+{% extends 'home/home.html' %}
 {% load static %}
-
-<html>
-
-<head>
-    <title>Seller</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link href="{% static 'seller/css/seller.css' %}" type="text/css" rel="stylesheet">
-</head>
-
-<body>
-    <div class="navbar" style="background-color: #24b59d">
-        <div class="container-fluid">
-            <div class="logo">
-                <img src="../../../seller/static/seller/images/logo.png" style="height:50px ; width:50px">
-                <h1 style="float:right;">&nbspAnn Suraksha</h1>
+{% block content %}
+<a name="buyer" class="login">
+    <div id="singnup" class="container text-center mt-5">
+        <h1>SIGN UP</h1>
+        <form method="POST">
+            {% csrf_token %}
+            <label for="firstname">First Name</label><br>
+            {{sform.first_name}}<br>
+            <label for="lastname">Last Name</label><br>
+            {{sform.last_name}}<br>
+            <label for="contact">Contact No.</label><br>
+            {{sform.phone}}<br>
+            <label for="email">Email</label><br>
+            {{form.email}}<br>
+            <label for="aadhar">Aadhar No.</label><br>
+            {{sform.aadhar}}<br>
+            <label for="district">District</label><br>
+            {{sform.district}}<br>
+            <label for="city">City</label><br>
+            {{sform.city}}<br>
+            <label for="state">State</label><br>
+            {{sform.state}}<br>
+            <label for="password">Enter a Password</label><br>
+            {{form.password1}}<br>
+            <label for="again password">ReEnter Password</label><br>
+            {{form.password2}}<br>
+            <div class="alert alert-danger" id="alert" role="alert" style="display: none ; width:auto">
+                Passwords Did'nt Match ....Try Again
             </div>
-            <div class="toggle" style="background-color: #00BCD4;">
-                <span style="background-color: white;"></span>
-                <span style="background-color: white;"></span>
-                <span style="background-color: white;"></span>
-                <span style="background-color: white;"></span>
-            </div>
-            <div class="links">
-                <ul>
-                    <li style="display:inline-block ; padding:15px ; font-size:1.3em">
-                        <img src="../../static/seller/images/home-icon.png" style="height: 25px ; width:25px">
-                        <a href="home.html">&nbspHome</a>
-                    </li>
-                    <li style="display:inline-block ; padding:15px ; font-size:1.3em">
-                        <img src="../../static/seller/images/farmer-icon.png" style="height: 25px ; width:25px;">
-                        <a href="../../../seller/templates/seller/seller_login.html">Seller</a>
-                    </li>
-                    <li style="display:inline-block ; padding:15px ; font-size:1.3em">
-                        <img src="../../static/seller/images/warehouse-icon.png" style="height: 25px ; width:25px;">
-                        <a href="../../../buyer/templates/buyer/buyer_login.html">&nbspBuyer</a>
-                    </li>
-                    <li style="display:inline-block ; padding:15px ; font-size:1.3em">
-                        <img src="../../static/seller/images/logistics-icon.png" style="height: 25px ; width:25px">
-                        <a href="../../../logistics/templates/logistics/logistics_login.html">&nbspLogistics</a>
-                    </li>
-                    <li style="display:inline-block ; padding:15px ; font-size:1.3em">
-                        <img src="../../static/seller/images/scheme-icon.png" style="height: 25px ; width:25px">
-                        <a href="http://agricoop.nic.in/programmes-schemes-listing" target="_blank">&nbspSchemes</a>
-                    </li>
-                    <li style="display:inline-block ; padding:15px ; font-size:1.3em">
-                        <img src="../../static/seller/images/aboutus-icon.png" style="height: 25px ; width:25px">
-                        <a href="about-us.html">&nbspAbout Us</a>
-                    </li>
-                </ul>
-            </div>
+
+            <button type="submit" class="btn btn-primary mt-4" id="signup-button">Sign Up</button>
+        </form>
+
+        <div class="mt-2">Already Have Account.. <a href="{% url 'seller:sellerlogin' %}" id="open_login">Login</a>
         </div>
+
     </div>
-    <img style="height: 122% !important" src="{% static 'images/login-portal1.jpg' %}">
-    {% if messages %}
-    {% for message in messages %}
-    <div class="alert alert-{{message.tags}}">{{message}}</div>
-    {% endfor %}
-
-    {% endif %}
-
-    <a name="buyer" class="login">
-        <div id="singnup" class="container text-center mt-5">
-            <h1>SIGN UP</h1>
-            <form method="POST">
-                {% csrf_token %}
-                <label for="firstname">First Name</label><br>
-                {{sform.first_name}}<br>
-                <label for="lastname">Last Name</label><br>
-                {{sform.last_name}}<br>
-                <label for="contact">Contact No.</label><br>
-                {{sform.phone}}<br>
-                <label for="email">Email</label><br>
-                {{form.email}}<br>
-                <label for="aadhar">Aadhar No.</label><br>
-                {{sform.aadhar}}<br>
-                <label for="district">District</label><br>
-                {{sform.district}}<br>
-                <label for="city">City</label><br>
-                {{sform.city}}<br>
-                <label for="state">State</label><br>
-                {{sform.state}}<br>
-                <label for="password">Enter a Password</label><br>
-                {{form.password1}}<br>
-                <label for="again password">ReEnter Password</label><br>
-                {{form.password2}}<br>
-                <div class="alert alert-danger" id="alert" role="alert" style="display: none ; width:auto">
-                    Passwords Did'nt Match ....Try Again
-                </div>
-
-                <button type="submit" class="btn btn-primary mt-4" id="signup-button">Sign Up</button>
-            </form>
-
-            <div class="mt-2">Already Have Account.. <a href="{% url 'seller:sellerlogin' %}" id="open_login">Login</a>
-            </div>
-
-        </div>
-    </a>
-
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-        crossorigin="anonymous"></script>
-
-    <script type="text/javascript" src="{% static 'seller/js/seller.js' %}"></script>
-</body>
-
-</html>
+</a>
+{% endblock content %}

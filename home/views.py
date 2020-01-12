@@ -6,7 +6,10 @@ import requests
 
 def home(request):
     print('heom')
-    return render(request,'home/home.html')
+    return render(request,'home/hero.html')
+
+def about(request):
+    return render(request,'home/about-us.html')
 
 @login_required
 def user_logout(request):
