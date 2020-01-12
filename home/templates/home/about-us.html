@@ -1,62 +1,9 @@
+{% extends 'home/home.html' %}
+
 {% load static %}
 
-<html>
-
-<head>
-    <title>About Us</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
-    <link href="{% static 'home/css/main.css' %}" type="text/css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css"
-        integrity="sha384-REHJTs1r2ErKBuJB0fCK99gCYsVjwxHrSU0N7I1zl9vZbggVJXRMsv/sLlOAGb4M" crossorigin="anonymous" />
-    <link href="../static/css/main.css" type="text/css" rel="stylesheet">
-</head>
-
-<body>
-    <section>
-        <div class="navbar" style="background-color: #24b59d">
-            <div class="container-fluid">
-                <div class="logo">
-                    <img src="../../../seller/static/seller/images/logo.png" style="height:50px ; width:50px">
-                    <h1 style="float:right">&nbspAnn Suraksha</h1>
-                </div>
-                <div class="toggle" style="background-color: #00BCD4;">
-                    <span style="background-color: white;"></span>
-                    <span style="background-color: white;"></span>
-                    <span style="background-color: white;"></span>
-                    <span style="background-color: white;"></span>
-                </div>
-                <div class="links">
-                    <ul>
-                        <li style="display:inline-block ; padding:15px ; font-size:1.3em">
-                            <img src="../../static/images/home-icon.png" style="height: 25px ; width:25px">
-                            <a href="home.html">&nbspHome</a>
-                        </li>
-                        <li style="display:inline-block ; padding:15px ; font-size:1.3em">
-                            <img src="../../static/images/farmer-icon.png" style="height: 25px ; width:25px;">
-                            <a href="../../../seller/templates/seller/seller_login.html">Seller</a>
-                        </li>
-                        <li style="display:inline-block ; padding:15px ; font-size:1.3em">
-                            <img src="../../static/images/warehouse-icon.png" style="height: 25px ; width:25px;">
-                            <a href="../../../buyer/templates/buyer/buyer_login.html">&nbspBuyer</a>
-                        </li>
-                        <li style="display:inline-block ; padding:15px ; font-size:1.3em">
-                            <img src="../../static/images/logistics-icon.png" style="height: 25px ; width:25px">
-                            <a href="../../../logistics/templates/logistics/logistics_login.html">&nbspLogistics</a>
-                        </li>
-                        <li style="display:inline-block ; padding:15px ; font-size:1.3em">
-                            <img src="../../static/seller/images/scheme-icon.png" style="height: 25px ; width:25px">
-                            <a href="http://agricoop.nic.in/programmes-schemes-listing" target="_blank">&nbspSchemes</a>
-                        </li>
-                        <li style="display:inline-block ; padding:15px ; font-size:1.3em">
-                            <img src="../../static/images/aboutus-icon.png" style="height: 25px ; width:25px">
-                            <a href="about-us.html">&nbspAbout Us</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
+{% block content %}
+<section>
 
     <section class="mt-5">
         <div class="container text-center mb-5">
@@ -76,35 +23,5 @@
         </div>
     </section>
 
-    <section id="footer" style="background-color: #08080a ; color:white">
-        <div class="container-fluid">
-            <div class="row" style="width:99%">
-                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                    <h4><span style="position: relative ; left:16%">Ann</span><br><span
-                            style="position: relative ; left:4%">Suraksha</span></h4>
-                    <img src="../static/images/logo.png"
-                        style="height: 50px ; width:50px ; position: relative ; left:15%">
-                </div>
-                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                    <nav class="nav flex-column">
-                        <a class="nav-link" href="../../seller/templates/seller_login.html"
-                            style="color:white">Farmers</a>
-                        <a class="nav-link" href="#" style="color:white">Buyer</a>
-                        <a class="nav-link" href="../../logistics/templates/logistics/logistics_login.html"
-                            style="color:white">Logistics</a>
-                    </nav>
-                </div>
-                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                </div>
-                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-right">
-                    <h4>For Help</h4>
-                    <a href="tel:18001801551" style="color:white">1800-180-1551</a><br>
-                    <a href="http://agriculture.gov.in/" target="_blank"
-                        style="color: blue !important;">http://agriculture.gov.in/</a>
-                </div>
-            </div>
-        </div>
-    </section>
-</body>
 
-</html>
+    {% endblock content %}

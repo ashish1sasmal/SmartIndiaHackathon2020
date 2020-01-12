@@ -10,5 +10,9 @@ img {
     font-size: 100px;
 }
 a{
-    color:black;
+    color:white;
+}
+
+li{
+  font-color:white;
 }
