@@ -12,16 +12,25 @@ def register(request):
         form=UserForm(data=request.POST)
         bform=BuyerSignupForm(data=request.POST)
         if form.is_valid() and bform.is_valid():
-            user=form.save(commit=False)
-            user.username=form.cleaned_data['email']
-            user.save()
-            profile=bform.save(commit=False)
-            profile.state=request.POST.get('state')
-            profile.district=request.POST.get('district')
-            profile.user=user
-            profile.save()
-            messages.success(request,'Your account has been created !')
-            return redirect('home')
+            recaptcha_response = request.POST.get('g-recaptcha-response')
+            data = {
+                'secret': settings.GOOGLE_RECAPTCHA_SECRET_KEY,
+                'response': recaptcha_response
+            }
+            r = requests.post('https://www.google.com/recaptcha/api/siteverify', data=data)
+            result = r.json()
+            print(result['success'])
+            if result['success']:
+                user=form.save(commit=False)
+                user.username=form.cleaned_data['email']
+                user.save()
+                profile=bform.save(commit=False)
+                profile.state=request.POST.get('state')
+                profile.district=request.POST.get('district')
+                profile.user=user
+                profile.save()
+                messages.success(request,'Your account has been created !')
+                return redirect('home')
 
         else:
             print(form.errors)
