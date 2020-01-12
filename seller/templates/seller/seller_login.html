@@ -1,68 +1,6 @@
+{% extends 'home/home.html' %}
 {% load static %}
-
-<html>
-
-<head>
-    <title>Seller</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link href="../../static/seller/css/seller.css" type="text/css" rel="stylesheet">
-</head>
-
-<body>
-
-    <div class="navbar" style="background-color: #24b59d">
-        <div class="container-fluid">
-            <div class="logo">
-                <img src="../../../seller/static/seller/images/logo.png" style="height:50px ; width:50px">
-                <h1 style="float:right; color: black;">&nbspAnn Suraksha</h1>
-            </div>
-            <div class="toggle" style="background-color: #00BCD4;">
-                <span style="background-color: white;"></span>
-                <span style="background-color: white;"></span>
-                <span style="background-color: white;"></span>
-                <span style="background-color: white;"></span>
-            </div>
-            <div class="links">
-                <ul>
-                    <li style="display:inline-block ; padding:15px ; font-size:1.3em">
-                        <img src="../../static/seller/images/home-icon.png" style="height: 25px ; width:25px">
-                        <a href="home.html">&nbspHome</a>
-                    </li>
-                    <li style="display:inline-block ; padding:15px ; font-size:1.3em">
-                        <img src="../../static/seller/images/farmer-icon.png" style="height: 25px ; width:25px;">
-                        <a href="../../../seller/templates/seller/seller_login.html">Seller</a>
-                    </li>
-                    <li style="display:inline-block ; padding:15px ; font-size:1.3em">
-                        <img src="../../static/seller/images/warehouse-icon.png" style="height: 25px ; width:25px;">
-                        <a href="../../../buyer/templates/buyer/buyer_login.html">&nbspBuyer</a>
-                    </li>
-                    <li style="display:inline-block ; padding:15px ; font-size:1.3em">
-                        <img src="../../static/seller/images/logistics-icon.png" style="height: 25px ; width:25px">
-                        <a href="../../../logistics/templates/logistics/logistics_login.html">&nbspLogistics</a>
-                    </li>
-                    <li style="display:inline-block ; padding:15px ; font-size:1.3em">
-                        <img src="../../static/seller/images/scheme-icon.png" style="height: 25px ; width:25px">
-                        <a href="http://agricoop.nic.in/programmes-schemes-listing" target="_blank">&nbspSchemes</a>
-                    </li>
-                    <li style="display:inline-block ; padding:15px ; font-size:1.3em">
-                        <img src="../../static/seller/images/aboutus-icon.png" style="height: 25px ; width:25px">
-                        <a href="about-us.html">&nbspAbout Us</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <img src="{% static 'seller/images/login-portal.jpg">
-
-    {% if messages %}
-    {% for message in messages %}
-    <div class=" alert alert-{{message.tags}}">{{message}}</div>
-    {% endfor %}
-
-    {% endif %}
-
+{% block content %}
     <div id="love" class="container text-center mt-1">
         <h1 style="margin-top: 10%;">LOGIN</h1>
         <form method="POST">
@@ -78,18 +16,4 @@
         <div class="mt-2">New User ?? <a href="{% url 'seller:sellersignup' %}" id="open_signup">Sign Up</a></div>
 
     </div>
-
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-        crossorigin="anonymous"></script>
-
-    <script type="text/javascript" src="seller.js"></script>
-</body>
-
-</html>
+{% endblock content %}

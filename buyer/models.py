@@ -13,9 +13,14 @@ class BuyerProfile(models.Model):
     first_name=models.CharField(max_length=30)
     last_name=models.CharField(max_length=30)
     phone=models.CharField(max_length=10)
+    district=models.CharField(max_length=20,default='')
+    pin=models.CharField(max_length=6,default='')
+    state=models.CharField(max_length=20,default='')
+    commodity=models.CharField(default='crop',max_length=30)
     gst_no=models.IntegerField()
     company_name=models.CharField(max_length=30)
     is_buyer=models.BooleanField(default=True)
     is_seller=models.BooleanField(default=False)
+
     def __str__(self):
-        return self.user.username
+        return self.user.buyerprofile.company_name

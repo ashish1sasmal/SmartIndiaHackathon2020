@@ -2,10 +2,54 @@ from django.shortcuts import render,redirect
 from .forms import UserForm,SellerSignupForm
 from django.contrib import messages
 from django.contrib.auth import authenticate,login,logout
-
+import requests
+import json
+from buyer.models import BuyerProfile
 from django.contrib.auth.decorators import login_required
 # Create your views here.
 
+url = "https://api.data.gov.in/resource/9ef84268-d588-465a-a308-a864a43d0070?api-key=579b464db66ec23bdd000001ccc5a88319d2459f7a6636ac3d094690&format=json&offset=0&limit=10000"
+l=0
+
+
+def price(loc):
+    r = requests.request("GET", url)
+    data=r.json()
+    l={}
+    f=9
+    for i in range(int(data['count'])):
+        if data['records'][i]['state']==loc:
+                l[str(i)]=data['records'][i]
+                f=1
+
+    return([l,data['updated_date']])
+
+
+def dashboard(request):
+    return render(request,'seller/seller_dashboard.html')
+
+def sell(request):
+    state=None
+    district=None
+    commodity=None
+    seller=None
+    d=None
+    s=None
+    if request.method=='POST':
+        commodity=request.POST.get('commodity')
+        district=request.POST.get('district')
+        state=request.POST.get('state')
+
+
+        if district==None:
+            district=BuyerProfile.objects.filter(state=state,commodity=commodity).values_list('district',flat=True)
+        else:
+            d='true'
+            seller=BuyerProfile.objects.filter(state=state,commodity=commodity,district=district)
+
+
+    print(commodity,state,district)
+    return render(request,'seller/sell.html',{'commodity':commodity,'state':state,'districts':district,'sellers':seller,'d':d,'s':s})
 
 
 
