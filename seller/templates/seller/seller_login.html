@@ -1,19 +1,28 @@
 {% extends 'home/home.html' %}
 {% load static %}
 {% block content %}
-    <div id="love" class="container text-center mt-1">
-        <h1 style="margin-top: 10%;">LOGIN</h1>
-        <form method="POST">
-            {% csrf_token %}
-            <label for="username">Email</label><br>
+<style>
+    @font-face {
+        font-family: 'Typold Book';
+        font-style: normal;
+        font-weight: normal;
+        src: local('Typold Book'), url('..\\fonts\\Typold\\The Northern Block Ltd - Typold Book.woff') format('woff');
+    }
+</style>
 
-            <input type="text" id="username" placeholder="Email" name="email" required><br>
-            <label for="password">Password</label><br>
-            <input type="password" id="password" placeholder="Password" name="password" required><br>
+<div id="love" class="container text-center mt-1">
+    <h1 style="margin-top: 10%;font-family: 'Typold Book'">LOGIN</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <!--<label for="username">Email</label><br>-->
 
-            <button type="submit" class="btn btn-primary">LOGIN</button>
-        </form>
-        <div class="mt-2">New User ?? <a href="{% url 'seller:sellersignup' %}" id="open_signup">Sign Up</a></div>
+        <input type="text" id="username" placeholder="Email" name="email" required><br><br>
+        <!-- <label for="password">Password</label><br> -->
+        <input type="password" id="password" placeholder="Password" name="password" required><br><br>
 
-    </div>
+        <button type="submit" class="btn btn-primary">LOGIN</button>
+    </form>
+    <div class="mt-2">New User ?? <a href="{% url 'seller:sellersignup' %}" id="open_signup">Sign Up</a></div>
+
+</div>
 {% endblock content %}
