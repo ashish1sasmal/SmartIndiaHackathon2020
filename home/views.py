@@ -31,7 +31,7 @@ def price(loc):
 
     return([l,data['updated_date']])
 
-
+@login_required
 def checkprice(request):
     if request.method=="POST":
         loc=request.POST.get('state')
