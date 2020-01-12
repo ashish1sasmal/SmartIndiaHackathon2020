@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <form method="POST">
+      {% csrf_token %}
+        <div class="row pt-4 pb-4">
+
+            {% if commodity %}
+            <select name="warehouse-type" required>
+                <option value="{{commodity}}">{{commodity}}</option>
+            </select>
+            {% else %}
+            <div class="col-lg-6 text-center">
+
+              <label for="commodity">Commodity:</label><br>
+              <select id="commodity" name='commodity'>
+                  <option>-------Select Commodity-------</option>
+                  <option>Fruits</option>
+                  <option>Vegetables</option>
+                  <option>Medicinal</option>
+                  <option>Dairy</option>
+                  <option>Grains</option>
+                  <option>BioFuel</option>
+                  <option value="crop">Crops</option>
+                  <option>Plants</option>
+                  <option>None</option>
+              </select><br><br>
+
+            </div>
+            {% endif %}
+
+            {% if state %}
+            <div class="col-lg-6 text-center">
+                    <label for="region">Where You Want To Sell</label><br>
+
+                        <select class="" name="state">
+                          <option value="{{state}}">{{state}}</option>
+                        </select>
+
+                        <select class="" name="district">
+                            {% for district in districts %}
+                              <option value="{{district}}">{{district}}</option>
+                            {% endfor %}
+                        </select>
+                        <button class="btn btn-success ml-5" type="submit">Next</button>
+                    {% else %}
+
+                          <select name=state>
+                          <option value="">------------Select State------------</option>
+                          <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+                          <option value="Andhra Pradesh">Andhra Pradesh</option>
+                          <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                          <option value="Assam">Assam</option>
+                          <option value="Bihar">Bihar</option>
+                          <option value="Chandigarh">Chandigarh</option>
+                          <option value="Chhattisgarh">Chhattisgarh</option>
+                          <option value="Dadra and Nagar Haveli">Dadra and Nagar Haveli</option>
+                          <option value="Daman and Diu">Daman and Diu</option>
+                          <option value="Delhi">Delhi</option>
+                          <option value="Goa">Goa</option>
+                          <option value="Gujarat">Gujarat</option>
+                          <option value="Haryana">Haryana</option>
+                          <option value="Himachal Pradesh">Himachal Pradesh</option>
+                          <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+                          <option value="Jharkhand">Jharkhand</option>
+                          <option value="Karnataka">Karnataka</option>
+                          <option value="Kerala">Kerala</option>
+                          <option value="Lakshadweep">Lakshadweep</option>
+                          <option value="Madhya Pradesh">Madhya Pradesh</option>
+                          <option value="Maharashtra">Maharashtra</option>
+                          <option value="Manipur">Manipur</option>
+                          <option value="Meghalaya">Meghalaya</option>
+                          <option value="Mizoram">Mizoram</option>
+                          <option value="Nagaland">Nagaland</option>
+                          <option value="Orissa">Orissa</option>
+                          <option value="Pondicherry">Pondicherry</option>
+                          <option value="Punjab">Punjab</option>
+                          <option value="Rajasthan">Rajasthan</option>
+                          <option value="Sikkim">Sikkim</option>
+                          <option value="Tamil Nadu">Tamil Nadu</option>
+                          <option value="Tripura">Tripura</option>
+                          <option value="Uttaranchal">Uttaranchal</option>
+                          <option value="Uttar Pradesh">Uttar Pradesh</option>
+                          <option value="West Bengal">West Bengal</option>
+                          </select>
+                          <button class="btn btn-success ml-5" type="submit" >Next</button>
+                      {% endif %}<br><br>
+
+
+                </form>
+  </body>
+</html>

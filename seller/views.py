@@ -31,20 +31,25 @@ def dashboard(request):
 def sell(request):
     state=None
     district=None
-    warehouse=None
+    commodity=None
+    seller=None
+    d=None
+    s=None
     if request.method=='POST':
+        commodity=request.POST.get('commodity')
         district=request.POST.get('district')
         state=request.POST.get('state')
-        print(state)
-        if state and district:
-            print(state,district)
-
-            district=BuyerProfile.objects.filter(state=state).values_list('district',flat=True)
-            return render(request,'seller/sell.html',{'state':state,'districts':district})
-        district=BuyerProfile.objects.filter(state=state).values_list('district',flat=True)
 
 
-    return render(request,'seller/sell.html',{'state':state,'districts':district})
+        if district==None:
+            district=BuyerProfile.objects.filter(state=state,commodity=commodity).values_list('district',flat=True)
+        else:
+            d='true'
+            seller=BuyerProfile.objects.filter(state=state,commodity=commodity,district=district)
+
+
+    print(commodity,state,district)
+    return render(request,'seller/sell.html',{'commodity':commodity,'state':state,'districts':district,'sellers':seller,'d':d,'s':s})
 
 
 
