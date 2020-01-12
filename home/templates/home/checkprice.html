@@ -1,65 +1,8 @@
-<!doctype html>
-<html lang="en">
-
-<head>
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-
-  <link href="../../../home/static/home/css/main.css" rel="stylesheet" />
-  <title>Check Price</title>
-</head>
-
-<body>
-  <div class="navbar" style="background-color: #24b59d">
-    <div class="container-fluid">
-      <div class="logo">
-        <img src="../../../seller/static/seller/images/logo.png" style="height:50px ; width:50px">
-        <h1 style="float:right">&nbspAnn Suraksha</h1>
-      </div>
-      <div class="toggle" style="background-color: #00BCD4;">
-        <span style="background-color: white;"></span>
-        <span style="background-color: white;"></span>
-        <span style="background-color: white;"></span>
-        <span style="background-color: white;"></span>
-      </div>
-      <div class="links">
-        <ul>
-          <li style="display:inline-block ; padding:15px ; font-size:1.3em">
-            <img src="../../static/images/home-icon.png" style="height: 25px ; width:25px">
-            <a href="home.html">&nbspHome</a>
-          </li>
-          <li style="display:inline-block ; padding:15px ; font-size:1.3em">
-            <img src="../../static/images/farmer-icon.png" style="height: 25px ; width:25px;">
-            <a href="../../../seller/templates/seller/seller_login.html">Seller</a>
-          </li>
-          <li style="display:inline-block ; padding:15px ; font-size:1.3em">
-            <img src="../../static/images/warehouse-icon.png" style="height: 25px ; width:25px;">
-            <a href="../../../buyer/templates/buyer/buyer_login.html">&nbspBuyer</a>
-          </li>
-          <li style="display:inline-block ; padding:15px ; font-size:1.3em">
-            <img src="../../static/images/logistics-icon.png" style="height: 25px ; width:25px">
-            <a href="../../../logistics/templates/logistics/logistics_login.html">&nbspLogistics</a>
-          </li>
-          <li style="display:inline-block ; padding:15px ; font-size:1.3em">
-            <img src="../../static/seller/images/scheme-icon.png" style="height: 25px ; width:25px">
-            <a href="http://agricoop.nic.in/programmes-schemes-listing" target="_blank">&nbspSchemes</a>
-          </li>
-          <li style="display:inline-block ; padding:15px ; font-size:1.3em">
-            <img src="../../static/images/aboutus-icon.png" style="height: 25px ; width:25px">
-            <a href="about-us.html">&nbspAbout Us</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-
+{% extends 'home/home.html' %}
+{% load static %}
+{% block content %}
   <section>
-    <img src=".././../static/images/check-price3 .jpg" style="background-size: cover ; width:100%;">
+    <img src="{% static 'home/images/check-price3.jpg' %}" style="background-size: cover ; width:100%;">
     <h1 class="text-center" style="position: relative ; margin-top:-43%; color:white;">REALTIME MANDI PRICE</h1>
     <div class="container">
       <!-- <h1 class="text-center" style="color: white;">REALTIME MANDI PRICE</h1>-->
@@ -115,17 +58,4 @@
     </div>
   </section>
 
-  <!-- Optional JavaScript -->
-  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-    crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-    crossorigin="anonymous"></script>
-</body>
-
-</html>
+  {% endblock content %}

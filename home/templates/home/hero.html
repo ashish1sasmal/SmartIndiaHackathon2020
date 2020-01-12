@@ -4,203 +4,206 @@
 {% block content %}
 
 <section id="hero-section">
-    <div id="carouselExampleCaptions" class="carousel slide carousel-fade" data-ride="carousel">
-        <ol class="carousel-indicators">
-            <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
-            <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
-            <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
-        </ol>
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="{% static 'home/images/veg.jpg' %}" class="d-block w-100" />
-                <div class="carousel-caption d-none d-md-block">
-                    <h3>TITLE 1</h3>
-                    <p>Add Text For Title 1</p>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <!-- <img src="{% static 'home/images/top-image2.jpg' %}" class="d-block w-100" /> -->
-                <img src="https://res.cloudinary.com/purnesh/image/upload/f_auto/v1500106898/azadpur-header00.jpg" class="d-block w-100" />
+    <style>
+        @font-face {
+            font-family: ikaros-sans;
+            src: url("../../home/fonts/Ikaros\ sans/@font-face");
+            font-weight: normal;
+        }
+    </style>
 
-                <div class="carousel-caption d-none d-md-block">
-                    <h3>TITLE 2</h3>
-                    <p>Add Text For Title 2</p>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <!-- <img src="{% static 'home/images/top-image3.jpg' %}" class="d-block w-100" /> -->
-
-                <img src="https://media.gettyimages.com/photos/old-farmer-holding-digital-tablet-picture-id547133100?s=2048x2048" class="d-block w-100" />
-
-                <div class="carousel-caption d-none d-md-block">
-                    <h3>TITLE 3</h3>
-                    <p>Add Text For Title 3</p>
-                </div>
-            </div>
-        </div>
-        <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-        </a>
-    </div>
-</section>
-<section id="highlights">
-    <div class="row text-center justify-content-center pt-5 pb-5" style="width:101.2% ; background-color: #f7f7f7;">
-        <div class="ml-4 mr-4 col-lg-2 col-md-2 col-sm-2 col-xs-2 col-md-2 col-sm-2 col-xs-2 events-card">
-            <div class="row">
-                <div class="card text-black rounded-circle">
-                    <br>
-                    <img src="{% static 'home/images/region-logo.png' %}"
-                        style="height:20% ; width:25% ; position: relative ; left:37%">
-                    <h2 class="card-title text-success">Regions<br>Covered</h2>
-                    <p class="card-text" style="font-size:2em">40+</p>
-                </div>
-            </div>
-        </div>
-        <div class="ml-4 mr-4 col-lg-2 col-md-2 col-sm-2 col-xs-2 col-md-2 col-sm-2 col-xs-2 events-card">
-            <div class="row">
-                <div class="card text-black rounded-circle">
-                    <br>
-                    <img src="{% static 'home/images/farm-logo.png' %}"
-                        style="height:20% ; width:25% ; position: relative ; left:37%">
-                    <h2 class="card-title text-success">Farmers Connected</h2>
-                    <p class="card-text" style="font-size:2em">1000+</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="ml-4 mr-4 col-lg-2 col-md-2 col-sm-2 col-xs-2 col-md-2 col-sm-2 col-xs-2 events-card">
-            <div class="row">
-                <div class="card text-black rounded-circle">
-                    <br>
-                    <img src="{% static 'home/images/warehouse-logo.png' %}"
-                        style="height:20% ; width:25% ; position: relative ; left:37%">
-                    <h2 class="card-title text-success">Happy Customers</h2>
-                    <p class="card-text" style="font-size:2em">1000+</p>
-                </div>
-            </div>
-        </div>
-        <div class="ml-4 mr-4 col-lg-2 col-md-2 col-sm-2 col-xs-2 col-md-2 col-sm-2 col-xs-2 events-card">
-            <div class="row">
-                <div class="card text-black rounded-circle">
-                    <br>
-                    <img src="{% static 'home/images/logistics-logo.png' %}"
-                        style="height:20% ; width:25% ; position: relative ; left:37%">
-                    <h2 class="card-title text-success">Logistics Connected</h2>
-                    <p class="card-text" style="font-size:2em">50+</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<button class="btn rounded-pill bg-success" onclick="chat()" id="chat-button"
-    style="position: fixed ; right:22px ; bottom:22px ;z-index: 1;">Chat</button>
-<div style="display: none" id="chat-iframe" style="position: absolute ; right:22px ; bottom:22px ; z-index:100">
-    <iframe height="430" width="350" allow="microphone;" src="https://console.dialogflow.com/api-client/demo/embedded/annSuraksha" style="position:fixed ; right:22px ; bottom:22px"></iframe>
-</div>
-
-<section id="abouts-us">
-    <div class="grid mt-5 container mb-5" style="height: 24em;">
-        <div class="card mb-10" style="height:100% ">
-            <div class="row no-gutters" style="height: 100%">
-                <div class="col-md-6">
-                    <img src="{% static 'home/images/top-image1.jpg' %}" class="card-img"
-                        style="height: 100% ; width:100%;" />
-                </div>
-                <div class="col-md-6 text-center">
-                    <div class="card-body">
-                        <h1 class="card-title">About Us</h1>
-                        <p class="card-text"> Since as far back as one can remember, information and commodity flow in rural India have been dominated by players who have thrived on the opaqueness, inconsistency and fragmentation of the ecosystem. Technology, while making rapid strides in the everyday life of an urban dweller.....
-                        </p>
-                        <a href="about-us.html"><button class="btn btn-primary" type="button">Read
-                                More</button></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section id="women">
-    <div class="grid mt-5 container mb-5" style="height: 24em;">
-        <div class="card mb-10" style="height:100% ">
-            <div class="row no-gutters" style="height: 100%">
-                <div class="col-md-6 text-center">
-                    <div class="card-body">
-                        <h1 class="card-title">Only For Women</h1>
-                        <p class="card-text">
-                            <ul style="list-style-type: none;">
-                                <li><a href="http://mksp.gov.in/">Mahila kisan Sashaktikaran Pariyojana</a></li>
-                                <li><a
-                                        href="http://vikaspedia.in/agriculture/women-and-agriculture/special-provisions-for-women-farmers-in-national-schemes#section-11">Agricultural
-                                        Insurance</a></li>
-                                <li><a
-                                        href="http://vikaspedia.in/agriculture/women-and-agriculture/special-provisions-for-women-farmers-in-national-schemes#section-5">Mission
-                                        for Integrated Development of Horticulture (MIDH)</a></li>
-                                <li><a
-                                        href="http://vikaspedia.in/agriculture/women-and-agriculture/special-provisions-for-women-farmers-in-national-schemes#section-6">National
-                                        Mission on Oilseeds & Oil Palm (NMOOP)</a></li>
-                                <li><a
-                                        href="http://vikaspedia.in/agriculture/women-and-agriculture/special-provisions-for-women-farmers-in-national-schemes#section-7">Integrated
-                                        Scheme for Agricultural Marketing (ISAM)</a></li>
-                                <li><a
-                                        href="http://vikaspedia.in/agriculture/women-and-agriculture/special-provisions-for-women-farmers-in-national-schemes#section-8">National
-                                        Food Security Mission (NFSM)</a></li>
-                                <li><a
-                                        href="http://vikaspedia.in/agriculture/women-and-agriculture/special-provisions-for-women-farmers-in-national-schemes#section-9">National
-                                        Mission for Sustainable Agriculture (NMSA)</a></li>
-                                <li><a
-                                        href="http://vikaspedia.in/agriculture/women-and-agriculture/special-provisions-for-women-farmers-in-national-schemes#section-10">Sub-Mission
-                                        on Agricultural Mechanization (SMAM)</a></li>
-                                <li><a
-                                        href="http://vikaspedia.in/agriculture/women-and-agriculture/special-provisions-for-women-farmers-in-national-schemes#section-3">Agri-Clinics
-                                        & Agri-Business Centers (ACABC)</a></li>
-                                <li><a
-                                        href="http://vikaspedia.in/agriculture/women-and-agriculture/special-provisions-for-women-farmers-in-national-schemes#section-3">Agriculture
-                                        Technology Management Agency (ATMA)</a></li>
-                                <li><a
-                                        href="http://vikaspedia.in/agriculture/women-and-agriculture/special-provisions-for-women-farmers-in-national-schemes#section-3">Mass
-                                        Media Support to Agricultural Extension</a></li>
-                            </ul>
-                        </p>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <img src="{% static 'home/images/women.jpg' %}" class="card-img" style="height: 100% ; width:100%;" />
-                </div>
-            </div>
-        </div>
-</section>
-
-<section id="testimonials" class="pb-5 text-center" style="background-color: #f7f7f7">
-    <h1 class="pt-2 pb-2">Customer Stories</h1>
-    <div class="container-fluid w-50 text-center h-70">
-        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+    <section id="hero-section">
+        <div id="carouselExampleCaptions" class="carousel slide carousel-fade" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+                <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+            </ol>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="{% static 'home/images/review-1.jpg' %}" style="height:300px ; width:100%">
+                    <img src="{% static 'home/images/veg.jpg' %}" class="d-block w-100" />
                 </div>
                 <div class="carousel-item">
-                    <img src="{% static 'home/images/review-2.jpg' %}" style="height:300px ; width:100%">
+                    <img src="https://res.cloudinary.com/purnesh/image/upload/f_auto/v1500106898/azadpur-header00.jpg"
+                        class="d-block w-100" />
                 </div>
-                <div class="carousel-item">
-                    <img src="{% static 'home/images/review-3.jpg' %}" style="height:300px ; width:100%">
+                <div class="carousel-item ">
+                    <img src="https://previews.123rf.com/images/adsniks/adsniks1906/adsniks190600099/124419178-indian-rural-farmer-using-laptop.jpg"
+                        class="d-block w-100" />
                 </div>
             </div>
-            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+            <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="sr-only">Previous</span>
             </a>
-            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+            <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="sr-only">Next</span>
             </a>
         </div>
+    </section>
+    <section id="highlights">
+        <div class="row text-center justify-content-center pt-5 pb-5" style="width:101.2% ; background-color: #f7f7f7;">
+            <div class="ml-4 mr-4 col-lg-2 col-md-2 col-sm-2 col-xs-2 col-md-2 col-sm-2 col-xs-2 events-card">
+                <div class="row">
+                    <div class="card text-black rounded-circle">
+                        <br>
+                        <img src="{% static 'home/images/region-logo.png' %}"
+                            style="height:20% ; width:25% ; position: relative ; left:37%">
+                        <h2 class="card-title text-success">Regions<br>Covered</h2>
+                        <p class="card-text" style="font-size:2em">40+</p>
+                    </div>
+                </div>
+            </div>
+            <div class="ml-4 mr-4 col-lg-2 col-md-2 col-sm-2 col-xs-2 col-md-2 col-sm-2 col-xs-2 events-card">
+                <div class="row">
+                    <div class="card text-black rounded-circle">
+                        <br>
+                        <img src="{% static 'home/images/farm-logo.png' %}"
+                            style="height:20% ; width:25% ; position: relative ; left:37%">
+                        <h2 class="card-title text-success">Farmers Connected</h2>
+                        <p class="card-text" style="font-size:2em">1000+</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ml-4 mr-4 col-lg-2 col-md-2 col-sm-2 col-xs-2 col-md-2 col-sm-2 col-xs-2 events-card">
+                <div class="row">
+                    <div class="card text-black rounded-circle">
+                        <br>
+                        <img src="{% static 'home/images/warehouse-logo.png' %}"
+                            style="height:20% ; width:25% ; position: relative ; left:37%">
+                        <h2 class="card-title text-success">Happy Customers</h2>
+                        <p class="card-text" style="font-size:2em">1000+</p>
+                    </div>
+                </div>
+            </div>
+            <div class="ml-4 mr-4 col-lg-2 col-md-2 col-sm-2 col-xs-2 col-md-2 col-sm-2 col-xs-2 events-card">
+                <div class="row">
+                    <div class="card text-black rounded-circle">
+                        <br>
+                        <img src="{% static 'home/images/logistics-logo.png' %}"
+                            style="height:20% ; width:25% ; position: relative ; left:37%">
+                        <h2 class="card-title text-success">Logistics Connected</h2>
+                        <p class="card-text" style="font-size:2em">50+</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <button class="btn rounded-pill bg-success" onclick="chat()" id="chat-button"
+        style="position: fixed ; right:22px ; bottom:22px ;z-index: 1;">Chat</button>
+    <div style="display: none" id="chat-iframe" style="position: absolute ; right:22px ; bottom:22px">
+        <iframe height="430" width="350" allow="microphone;"
+            src="https://console.dialogflow.com/api-client/demo/embedded/annSuraksha"
+            style="position:fixed ; right:22px ; bottom:22px"></iframe>
     </div>
-</section>
-{% endblock content %}
+
+    <section id="abouts-us">
+        <div class="grid mt-5 container mb-5" style="height: 24em;">
+            <div class="card mb-10" style="height:100% ">
+                <div class="row no-gutters" style="height: 100%">
+                    <div class="col-md-6">
+                        <img src="{% static 'home/images/top-image1.jpg' %}" class="card-img"
+                            style="height: 100% ; width:100%;" />
+                    </div>
+                    <div class="col-md-6 text-center">
+                        <div class="card-body" style="font-family: ikaros-sans; font-size: 1.2em;"><br>
+                            <h1 class="card-title">About Us</h1>
+                            <p class="card-text">
+                                Since as far back as one can remember, information and commodity flow in rural India
+                                have
+                                been dominated
+                                by players who have thrived on the opaqueness, inconsistency and fragmentation of the
+                                ecosystem.
+                                Technology, while making rapid strides in the everyday life of an urban dweller.....
+                            </p>
+                            <a href="about-us.html"><button class="btn btn-primary" type="button">Read
+                                    More</button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="women">
+        <div class="grid mt-5 container mb-5" style="height: 28em;">
+            <div class="card mb-10" style="height:100% ">
+                <div class="row no-gutters" style="height: 100%">
+                    <div class="col-md-6 text-center">
+                        <div class="card-body" style="font-family: ikaros-sans; font-size: 1.2em;">
+                            <h1 class="card-title">Schemes for Women</h1>
+                            <p class="card-text">
+                                <ul class="text-left">
+                                    <li><a href="http://mksp.gov.in/">Mahila kisan Sashaktikaran Pariyojana</a></li>
+                                    <li><a
+                                            href="http://vikaspedia.in/agriculture/women-and-agriculture/special-provisions-for-women-farmers-in-national-schemes#section-11">Agricultural
+                                            Insurance</a></li>
+                                    <li><a
+                                            href="http://vikaspedia.in/agriculture/women-and-agriculture/special-provisions-for-women-farmers-in-national-schemes#section-5">Mission
+                                            for Integrated Development of Horticulture (MIDH)</a></li>
+                                    <li><a
+                                            href="http://vikaspedia.in/agriculture/women-and-agriculture/special-provisions-for-women-farmers-in-national-schemes#section-6">National
+                                            Mission on Oilseeds & Oil Palm (NMOOP)</a></li>
+                                    <li><a
+                                            href="http://vikaspedia.in/agriculture/women-and-agriculture/special-provisions-for-women-farmers-in-national-schemes#section-7">Integrated
+                                            Scheme for Agricultural Marketing (ISAM)</a></li>
+                                    <li><a
+                                            href="http://vikaspedia.in/agriculture/women-and-agriculture/special-provisions-for-women-farmers-in-national-schemes#section-8">National
+                                            Food Security Mission (NFSM)</a></li>
+                                    <li><a
+                                            href="http://vikaspedia.in/agriculture/women-and-agriculture/special-provisions-for-women-farmers-in-national-schemes#section-9">National
+                                            Mission for Sustainable Agriculture (NMSA)</a></li>
+                                    <li><a
+                                            href="http://vikaspedia.in/agriculture/women-and-agriculture/special-provisions-for-women-farmers-in-national-schemes#section-10">Sub-Mission
+                                            on Agricultural Mechanization (SMAM)</a></li>
+                                    <li><a
+                                            href="http://vikaspedia.in/agriculture/women-and-agriculture/special-provisions-for-women-farmers-in-national-schemes#section-3">Agri-Clinics
+                                            & Agri-Business Centers (ACABC)</a></li>
+                                    <li><a
+                                            href="http://vikaspedia.in/agriculture/women-and-agriculture/special-provisions-for-women-farmers-in-national-schemes#section-3">Agriculture
+                                            Technology Management Agency (ATMA)</a></li>
+                                    <li><a
+                                            href="http://vikaspedia.in/agriculture/women-and-agriculture/special-provisions-for-women-farmers-in-national-schemes#section-3">Mass
+                                            Media Support to Agricultural Extension</a></li>
+                                </ul>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <img src="{% static 'home/images/women.jpg' %}" class="card-img"
+                            style="height: 100% ; width:100%;" />
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <section id="testimonials" class="pb-5 text-center" style="background-color: #f7f7f7">
+        <h1 class="pt-2 pb-2">Highlights</h1>
+        <div class="container-fluid w-50 text-center h-70">
+            <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="../../static/home/images/highlights.jpg" style="height:300px ; width:100%">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="{% static 'home/images/review-2.jpg' %}" style="height:300px ; width:100%">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="{% static 'home/images/review-3.jpg' %}" style="height:300px ; width:100%">
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+    </section>
+    {% endblock content %}
