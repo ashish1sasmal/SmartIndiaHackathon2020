@@ -11,7 +11,7 @@
               {% csrf_token %}
 
                         {% if  state %}
-                              <div class="col-lg-6 text-center">
+                              <div class="col-lg-4 text-center">
                                 <label for="commodity-type">Commodity Type:</label><br>
 
                                       <select name="commodity" required>
@@ -19,20 +19,23 @@
                                       </select>
 
                               </div>
-                              <div class="col-lg-6 text-center">
-                                      <label for="state">Where You Want To Sell</label><br>
+                              <div class="col-lg-4 text-center">
+                                      <label for="state">Select the State where you want to sell:</label><br>
                                       <select class="" name="state">
                                         <option value="{{state}}">{{state}}</option>
                                       </select>
                               </div>
-
+                              <div class="col-lg-4 text-center">
                                 {% if d %}
-                                <label for="region">Where You Want To Sell</label><br>
+                                <label for="region">Select the district to Sell:</label><br>
                                 <select class="" name="district">
 
                                       <option value="{{districts}}">{{districts}}</option>
 
                                 </select>
+                              </div>
+
+                                
 
                                 {% for seller in sellers %}
                                 <div class="card mb-3 text-center" style="max-width: 540px;">
@@ -144,27 +147,22 @@
             </div>
             <div class="container mt-4 pb-4"
                 style="display: none ; -webkit-box-shadow: 0 0 10px #000; box-shadow: 0 0 10px #000;" id="second-div">
-                <div class="container w-50 pt-4 pb-4">
+                <div class="container w-50 pt-4 pb-4 text-center justify-content-center">
                     <div class="card mb-3 text-center" style="max-width: 540px;">
                         <div class="row no-gutters">
-                            <div class="col-md-4">
-                                <img src="../../static/seller/images/login-portal.jpg" class="card-img">
-                            </div>
-                            <div class="col-md-8">
+                            <div class="col-md-12">
                                 <div class="card-body">
                                     <h5 class="card-title">Card title</h5>
                                     <p class="card-text">This is a wider card with supporting text below as a natural
-                                        lead-in to additional content. This content is a little bit longer.</p>
+                                        lead-in to additional content. This content is a little bit longer.</p><br><br>
+                                        <button type="button" class="btn btn-success" id="select">Select</button>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="card mb-3 text-center" style="max-width: 540px;">
                         <div class="row no-gutters">
-                            <div class="col-md-4">
-                                <img src="../../static/seller/images/login-portal.jpg" class="card-img">
-                            </div>
-                            <div class="col-md-8">
+                            <div class="col-md-12">
                                 <div class="card-body">
                                     <h5 class="card-title">Card title</h5>
                                     <p class="card-text">This is a wider card with supporting text below as a natural
