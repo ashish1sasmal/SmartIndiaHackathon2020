@@ -45,13 +45,28 @@
                         <img src="{% static 'home/images/logistics-icon.png' %}" style="height: 25px ; width:25px">
                         <a href="../../../logistics/templates/logistics/logistics_login.html">&nbspLogistics</a>
                     </li>
-                    <li style="display:inline-block ; padding:15px ; font-size:1.3em">
+
+                    <!--<li style="display:inline-block ; padding:15px ; font-size:1.3em">
                         <img src="{% static 'home/images/scheme-icon.png' %}" style="height: 25px ; width:25px">
                         <a href="http://agricoop.nic.in/programmes-schemes-listing" target="_blank">&nbspSchemes</a>
-                    </li>
+                    </li>-->
                     <li style="display:inline-block ; padding:15px ; font-size:1.3em">
                         <img src="{% static 'home/images/aboutus-icon.png' %}" style="height: 25px ; width:25px">
                         <a href="{% url 'about' %}">&nbspAbout Us</a>
+                    </li>
+                    <li class="nav-item dropdown" style="display:inline-block ; padding:15px ; font-size:1.3em">
+                        <!-- <img src="{% static 'home/images/scheme-icon.png' %}" style="height: 25px ; width:25px"> -->
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Utility
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="../home/checkprice.html">Check-Mandi-Price</a>
+                            <a class="dropdown-item" href="http://agricoop.nic.in/programmes-schemes-listing"
+                                target="_blank">Schemes</a>
+                            <a class="dropdown-item" href="../home/checkprice.html">Weather</a>
+                            <a class="dropdown-item" href="../home/checkprice.html">Price-Prediction</a>
+                        </div>
                     </li>
                 </ul>
             </div>
@@ -65,7 +80,7 @@
     {% endif %}
     {% block content %} {% endblock %}
 
-    
+
 
     <section id="footer" style="background-color: #08080a ; color:white">
         <div class="container-fluid">
