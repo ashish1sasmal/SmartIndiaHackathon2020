@@ -61,13 +61,13 @@
                             Utility
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="../home/checkprice.html">Check-Mandi-Price</a>
+                            <a class="dropdown-item" href="{% url 'check' %}">Check-Mandi-Price</a>
                             <a class="dropdown-item" href="http://agricoop.nic.in/programmes-schemes-listing"
                                 target="_blank">Schemes</a>
                             <a class="dropdown-item" href="../home/checkprice.html">Weather</a>
                             <a class="dropdown-item" href="../home/checkprice.html">Price-Prediction</a>
                             {% if user.is_authenticated %}
-                                <a class="dropdown-item" href="{% url 'logout' %}">Price-Prediction</a>
+                                <a class="dropdown-item" href="{% url 'logout' %}">Logout</a>
                             {% endif %}
 
                         </div>
