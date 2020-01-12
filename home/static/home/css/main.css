@@ -1,7 +1,3 @@
-#nav1
-{
-    box-shadow: 10px 10px 10px;
-}
 img {
     height: 100vh;
   }
@@ -13,10 +9,9 @@ a{
     color:white;
 }
 
-ul li:hover a {
-     color: #1ec76a;
+ul li a{
+  color:black
 }
-
 
 /* Container holding the image and the text */
 .centered {
