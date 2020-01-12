@@ -1,5 +1,7 @@
 {% extends 'home/home.html' %}
+{% load static %}
 {% block content %}
+            <script src="{% static 'buyer/js/cities.js' %}"></script>
                 <section id="sign_up">
         <a name="buyer" class="login">
 
@@ -7,21 +9,26 @@
                 <h1>SIGN UP</h1>
                 <form method="POST">
                     {% csrf_token %}
-                <label for="firstname">First Name</label><br>
+                <label for="firstname">First Name</label>
                 {{bform.first_name}}<br>
-                <label for="lastname">Last Name</label><br>
+                <label for="lastname">Last Name</label>
                 {{bform.last_name}}<br>
-                <label for="email">E-Mail</label><br>
+                <label for="email">E-Mail</label>
                 {{form.email}}<br>
-                <label for="contact">Contact No.</label><br>
+                <label for="contact">Contact No.</label>
                 {{bform.phone}}<br>
-                <label for="gst">GST Number</label><br>
+                <label for="state">State</label>
+                <select name="state" onchange="print_city('state', this.selectedIndex);" id="sts" name ="stt" class="form-control" required></select><br>
+                <label for="district">District</label>
+                <select id ="state" class="form-control" name="district" required></select><br>
+                <script language="javascript">print_state("sts");</script>
+                <label for="gst">GST Number</label>
                 {{bform.gst_no}}<br>
-                <label for="company">Company Name</label><br>
+                <label for="company">Company Name</label>
                 {{bform.company_name}}<br>
-                <label for="password">Enter a Password</label><br>
+                <label for="password">Enter a Password</label>
                 {{form.password1}}<br>
-                <label for="again password">ReEnter Password</label><br>
+                <label for="again password">ReEnter Password</label>
                 {{form.password2}}<br>
 
 
@@ -35,4 +42,5 @@
             </div>
         </a>
     </section>
+
 {% endblock content %}

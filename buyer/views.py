@@ -16,6 +16,8 @@ def register(request):
             user.username=form.cleaned_data['email']
             user.save()
             profile=bform.save(commit=False)
+            profile.state=request.POST.get('state')
+            profile.district=request.POST.get('district')
             profile.user=user
             profile.save()
             messages.success(request,'Your account has been created !')
