@@ -1,6 +1,8 @@
 {% extends 'home/home.html' %}
 {% load static %}
 {% block content %}
+<script src="{% static 'buyer/js/cities.js' %}"></script>
+
 <a name="buyer" class="login">
     <div id="singnup" class="container text-center mt-5">
         <h1>SIGN UP</h1>
@@ -17,11 +19,10 @@
             <label for="aadhar">Aadhar No.</label><br>
             {{sform.aadhar}}<br>
             <label for="district">District</label><br>
-            {{sform.district}}<br>
-            <label for="city">City</label><br>
-            {{sform.city}}<br>
-            <label for="state">State</label><br>
-            {{sform.state}}<br>
+            <select name="state" onchange="print_city('state', this.selectedIndex);" id="sts" name ="stt" class="form-control" required></select><br>
+            <label for="district">District</label>
+            <select id ="state" class="form-control" name="district" required></select><br>
+            <script language="javascript">print_state("sts");</script>
             <label for="password">Enter a Password</label><br>
             {{form.password1}}<br>
             <label for="again password">ReEnter Password</label><br>
