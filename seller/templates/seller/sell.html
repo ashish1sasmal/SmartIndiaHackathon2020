@@ -11,7 +11,8 @@
               {% csrf_token %}
 
                         {% if  state %}
-                              <div class="col-lg-4 text-center">
+                        <div class="row">
+                              <div class="col-lg-4 text-center pt-4 pb-4">
                                 <label for="commodity-type">Commodity Type:</label><br>
 
                                       <select name="commodity" required>
@@ -19,13 +20,13 @@
                                       </select>
 
                               </div>
-                              <div class="col-lg-4 text-center">
+                              <div class="col-lg-4 text-center pt-4 pb-4">
                                       <label for="state">Select the State where you want to sell:</label><br>
                                       <select class="" name="state">
                                         <option value="{{state}}">{{state}}</option>
                                       </select>
                               </div>
-                              <div class="col-lg-4 text-center">
+                              <div class="col-lg-4 text-center pt-4 pb-4">
                                 {% if d %}
                                 <label for="region">Select the district to Sell:</label><br>
                                 <select class="" name="district">
@@ -34,16 +35,14 @@
 
                                 </select>
                               </div>
+                              </div>
 
                                 
-
+                                <div class="container justify-content-center">
                                 {% for seller in sellers %}
-                                <div class="card mb-3 text-center" style="max-width: 540px;">
+                                <div class="card mb-3 text-center w-50">
                                     <div class="row no-gutters">
-                                        <div class="col-md-4">
-                                            <img src="../../static/seller/images/login-portal.jpg" class="card-img">
-                                        </div>
-                                        <div class="col-md-8">
+                                        <div class="col-md-12">
                                             <div class="card-body">
                                                 <h5 class="card-title">{{seller.company_name}}</h5>
                                                 <p class="card-text">Owner Name : {{seller.first_name}} {{seller.last_name}}</p>
@@ -51,8 +50,10 @@
                                                 <p class="card-text">Address : {{seller.district}} ,{{seller.state}},Pincode :{{seller.pin}}</p>
                                                 <p class="card-text">Phone : {{seller.phone}} </p>
                                             </div>
+                                            <button type="button" class="btn btn-success mb-4">Select</button>
                                         </div>
                                     </div>
+                                </div>
                                 </div>
 
                                 <div class="container">
