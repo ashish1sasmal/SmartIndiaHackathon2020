@@ -3,101 +3,100 @@
 
 {% block content %}
 
-            <h2 class="text-center">Sell Commodity</h2>
-            <hr>
-            <div class="container" style="-webkit-box-shadow: 0 0 10px #000;
+<h2 class="text-center">Sell Commodity</h2>
+<hr>
+<div class="container" style="-webkit-box-shadow: 0 0 10px #000;
             box-shadow: 0 0 10px #000;">
-            <form method="POST">
-              {% csrf_token %}
+    <form method="POST">
+        {% csrf_token %}
 
-                        {% if  state %}
-                              <div class="col-lg-4 text-center">
-                                <label for="commodity-type">Commodity Type:</label><br>
+        {% if  state %}
+        <div class="col-lg-4 text-center">
+            <label for="commodity-type">Commodity Type:</label><br>
 
-                                      <select name="commodity" required>
-                                        <option value="{{commodity}}">{{commodity}}</option>
-                                      </select>
+            <select name="commodity" required>
+                <option value="{{commodity}}">{{commodity}}</option>
+            </select>
 
-                              </div>
-                              <div class="col-lg-4 text-center">
-                                      <label for="state">Select the State where you want to sell:</label><br>
-                                      <select class="" name="state">
-                                        <option value="{{state}}">{{state}}</option>
-                                      </select>
-                              </div>
-                              <div class="col-lg-4 text-center">
-                                {% if d %}
-                                <label for="region">Select the district to Sell:</label><br>
-                                <select class="" name="district">
+        </div>
+        <div class="col-lg-4 text-center">
+            <label for="state">Select the State where you want to sell:</label><br>
+            <select class="" name="state">
+                <option value="{{state}}">{{state}}</option>
+            </select>
+        </div>
+        <div class="col-lg-4 text-center">
+            {% if d %}
+            <label for="region">Select the district to Sell:</label><br>
+            <select class="" name="district">
 
-                                      <option value="{{districts}}">{{districts}}</option>
+                <option value="{{districts}}">{{districts}}</option>
 
-                                </select>
-                              </div>
-
-                                
-
-                                {% for seller in sellers %}
-                                <div class="card mb-3 text-center" style="max-width: 540px;">
-                                    <div class="row no-gutters">
-                                        <div class="col-md-4">
-                                            <img src="../../static/seller/images/login-portal.jpg" class="card-img">
-                                        </div>
-                                        <div class="col-md-8">
-                                            <div class="card-body">
-                                                <h5 class="card-title">{{seller.company_name}}</h5>
-                                                <p class="card-text">Owner Name : {{seller.first_name}} {{seller.last_name}}</p>
-                                                <p class="card-text">Commodity : {{seller.commodity}} </p>
-                                                <p class="card-text">Address : {{seller.district}} ,{{seller.state}},Pincode :{{seller.pin}}</p>
-                                                <p class="card-text">Phone : {{seller.phone}} </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="container">
-                                    <div class="row">
-                                        <div class="col-lg-6 text-center">
-
-                                                <label for="quantity">Quantity(in Quintals):</label><br>
-                                                <input type="number" name="quantity" id="quantity" placeholder="Quantity"><br><br>
-                                                <label for="contact-person">Contact Person</label><br>
-                                                <input type="text" name="contact" id="contact-person"
-                                                    placeholder="Conact Person">
-                                {% endfor %}
-                                {% else %}
-                                <label for="region">Where You Want To Sell</label><br>
-                                <select class="" name="district">
-                                    {% for district in districts %}
-                                      <option value="{{district}}">{{district}}</option>
-                                    {% endfor %}
-                                </select>
-                                {% endif %}
+            </select>
+        </div>
 
 
-                        {% else %}
+
+        {% for seller in sellers %}
+        <div class="card mb-3 text-center" style="max-width: 540px;">
+            <div class="row no-gutters">
+                <div class="col-md-4">
+                    <img src="../../static/seller/images/login-portal.jpg" class="card-img">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title">{{seller.company_name}}</h5>
+                        <p class="card-text">Owner Name : {{seller.first_name}} {{seller.last_name}}</p>
+                        <p class="card-text">Commodity : {{seller.commodity}} </p>
+                        <p class="card-text">Address : {{seller.district}} ,{{seller.state}},Pincode :{{seller.pin}}</p>
+                        <p class="card-text">Phone : {{seller.phone}} </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 text-center">
+
+                    <label for="quantity">Quantity(in Quintals):</label><br>
+                    <input type="number" name="quantity" id="quantity" placeholder="Quantity"><br><br>
+                    <label for="contact-person">Contact Person</label><br>
+                    <input type="text" name="contact" id="contact-person" placeholder="Conact Person">
+                    {% endfor %}
+                    {% else %}
+                    <label for="region">Where You Want To Sell</label><br>
+                    <select class="" name="district">
+                        {% for district in districts %}
+                        <option value="{{district}}">{{district}}</option>
+                        {% endfor %}
+                    </select>
+                    {% endif %}
 
 
-                        <div class="col-lg-6 text-center">
-                          <label for="commodity">Commodity Type:</label><br>
+                    {% else %}
 
-                                <select name="commodity" required>
-                                  <option>-------Select Commodity-------</option>
-                                  <option>Fruits</option>
-                                  <option>Vegetables</option>
-                                  <option>Medicinal</option>
-                                  <option>Dairy</option>
-                                  <option>Grains</option>
-                                  <option>BioFuel</option>
-                                  <option value="crop">Crops</option>
-                                  <option>Plants</option>
-                                  <option>None</option>
-                                </select>
 
-                        </div>
-                        <div class="col-lg-6 text-center">
-                          <label for="state">Where You Want To Sell</label><br>
-                          <select class="" name="state">
+                    <div class="col-lg-6 text-center">
+                        <label for="commodity">Commodity Type:</label><br>
+
+                        <select name="commodity" required>
+                            <option>-------Select Commodity-------</option>
+                            <option>Fruits</option>
+                            <option>Vegetables</option>
+                            <option>Medicinal</option>
+                            <option>Dairy</option>
+                            <option>Grains</option>
+                            <option>BioFuel</option>
+                            <option value="crop">Crops</option>
+                            <option>Plants</option>
+                            <option>None</option>
+                        </select>
+
+                    </div>
+                    <div class="col-lg-6 text-center">
+                        <label for="state">Where You Want To Sell</label><br>
+                        <select class="" name="state">
                             <option value="">------------Select State------------</option>
                             <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
                             <option value="Andhra Pradesh">Andhra Pradesh</option>
@@ -134,109 +133,108 @@
                             <option value="Uttaranchal">Uttaranchal</option>
                             <option value="Uttar Pradesh">Uttar Pradesh</option>
                             <option value="West Bengal">West Bengal</option>
-                          </select>
+                        </select>
 
-                        </div>
+                    </div>
 
 
                     {% endif %}<br><br>
-                          <button class="btn btn-success ml-5" type="submit">Next</button>
-                        </form>
+                    <button class="btn btn-success ml-5" type="submit">Next</button>
+    </form>
+</div>
+</div>
+</div>
+<div class="container mt-4 pb-4" style="display: none ; -webkit-box-shadow: 0 0 10px #000; box-shadow: 0 0 10px #000;"
+    id="second-div">
+    <div class="container w-50 pt-4 pb-4 text-center justify-content-center">
+        <div class="card mb-3 text-center" style="max-width: 540px;">
+            <div class="row no-gutters">
+                <div class="col-md-12">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">This is a wider card with supporting text below as a natural
+                            lead-in to additional content. This content is a little bit longer.</p><br><br>
+                        <button type="button" class="btn btn-success" id="select">Select</button>
                     </div>
                 </div>
             </div>
-            <div class="container mt-4 pb-4"
-                style="display: none ; -webkit-box-shadow: 0 0 10px #000; box-shadow: 0 0 10px #000;" id="second-div">
-                <div class="container w-50 pt-4 pb-4 text-center justify-content-center">
-                    <div class="card mb-3 text-center" style="max-width: 540px;">
-                        <div class="row no-gutters">
-                            <div class="col-md-12">
-                                <div class="card-body">
-                                    <h5 class="card-title">Card title</h5>
-                                    <p class="card-text">This is a wider card with supporting text below as a natural
-                                        lead-in to additional content. This content is a little bit longer.</p><br><br>
-                                        <button type="button" class="btn btn-success" id="select">Select</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card mb-3 text-center" style="max-width: 540px;">
-                        <div class="row no-gutters">
-                            <div class="col-md-12">
-                                <div class="card-body">
-                                    <h5 class="card-title">Card title</h5>
-                                    <p class="card-text">This is a wider card with supporting text below as a natural
-                                        lead-in to additional content. This content is a little bit longer.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-6 text-center">
-
-                                <label for="quantity">Quantity(in Quintals):</label><br>
-                                <input type="number" name="quantity" id="quantity" placeholder="Quantity"><br><br>
-                                <label for="contact-person">Contact Person</label><br>
-                                <input type="text" name="contact-person" id="contact-person"
-                                    placeholder="Conact Person">
-
-                        <div class="col-lg-6 text-center">
-
-                                <label for="commodity">Commodity:</label><br>
-                                <select id="commodity">
-                                    <option>-------Select Commodity-------</option>
-                                    <option>Fruits</option>
-                                    <option>Vegetables</option>
-                                    <option>Medicinal</option>
-                                    <option>Dairy</option>
-                                    <option>Grains</option>
-                                    <option>BioFuel</option>
-                                    <option>Animals</option>
-                                    <option>Plants</option>
-                                    <option>None</option>
-                                </select><br><br>
-                                <label for="date">When Will You be able to sell the goods</label><br>
-                                <input type="date" id="date" name="date"><br><br>
-
-
-                        </div>
+        </div>
+        <div class="card mb-3 text-center" style="max-width: 540px;">
+            <div class="row no-gutters">
+                <div class="col-md-12">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">This is a wider card with supporting text below as a natural
+                            lead-in to additional content. This content is a little bit longer.</p>
                     </div>
                 </div>
             </div>
-
-
+        </div>
     </div>
 
-    <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
-    <script>
-        function openSlideMenu() {
-            document.getElementById('menu').style.width = '250px';
-            document.getElementById('content').style.marginLeft = '250px';
-        }
-        function closeSlideMenu() {
-            document.getElementById('menu').style.width = '0';
-            document.getElementById('content').style.marginLeft = '0';
-        }
-        function next() {
-            document.getElementById('second-div').style.display = "block"
-        }
-        function sell_click() {
-            document.getElementById("sell").style.display = "block"
-        }
-    </script>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 text-center">
 
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-        crossorigin="anonymous"></script>
+                <label for="quantity">Quantity(in Quintals):</label><br>
+                <input type="number" name="quantity" id="quantity" placeholder="Quantity"><br><br>
+                <label for="contact-person">Contact Person</label><br>
+                <input type="text" name="contact-person" id="contact-person" placeholder="Conact Person">
+
+                <div class="col-lg-6 text-center">
+
+                    <label for="commodity">Commodity:</label><br>
+                    <select id="commodity">
+                        <option>-------Select Commodity-------</option>
+                        <option>Fruits</option>
+                        <option>Vegetables</option>
+                        <option>Medicinal</option>
+                        <option>Dairy</option>
+                        <option>Grains</option>
+                        <option>BioFuel</option>
+                        <option>Animals</option>
+                        <option>Plants</option>
+                        <option>None</option>
+                    </select><br><br>
+                    <label for="date">When Will You be able to sell the goods</label><br>
+                    <input type="date" id="date" name="date"><br><br>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+<script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+<script>
+    function openSlideMenu() {
+        document.getElementById('menu').style.width = '250px';
+        document.getElementById('content').style.marginLeft = '250px';
+    }
+    function closeSlideMenu() {
+        document.getElementById('menu').style.width = '0';
+        document.getElementById('content').style.marginLeft = '0';
+    }
+    function next() {
+        document.getElementById('second-div').style.display = "block"
+    }
+    function sell_click() {
+        document.getElementById("sell").style.display = "block"
+    }
+</script>
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
 
 
 {% endblock content %}
