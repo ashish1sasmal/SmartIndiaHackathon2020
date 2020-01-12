@@ -21,7 +21,7 @@ class UserForm(UserCreationForm):
 class SellerSignupForm(forms.ModelForm):
     class Meta:
         model=SellerProfile
-        fields=['first_name','last_name','phone','district','aadhar','city','state']
+        fields=['first_name','last_name','phone','district','aadhar','state']
 
     def __init__(self, *args, **kwargs):
         super(SellerSignupForm, self).__init__(*args, **kwargs)
@@ -29,6 +29,5 @@ class SellerSignupForm(forms.ModelForm):
         self.fields['last_name'].widget=forms.TextInput(attrs={'id':'lastname','placeholder':'Last Name','required':'required'})
         self.fields['phone'].widget=forms.TextInput(attrs={'id':'contact','placeholder':'Contact No.','required':'required'})
         self.fields['district'].widget=forms.TextInput(attrs={'id':'district','placeholder':'District','required':'required'})
-        self.fields['city'].widget=forms.TextInput(attrs={'id':'city','placeholder':'Village/City','required':'required'})
         self.fields['aadhar'].widget=forms.TextInput(attrs={'id':'aadhar','placeholder':'Aadhar','required':'required'})
         self.fields['state'].widget=forms.TextInput(attrs={'id':'state','placeholder':'State','required':'required'})

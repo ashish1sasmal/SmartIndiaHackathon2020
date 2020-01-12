@@ -11,6 +11,7 @@
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css"
         integrity="sha384-REHJTs1r2ErKBuJB0fCK99gCYsVjwxHrSU0N7I1zl9vZbggVJXRMsv/sLlOAGb4M" crossorigin="anonymous" />
+
 </head>
 
 <body>
@@ -65,6 +66,10 @@
                                 target="_blank">Schemes</a>
                             <a class="dropdown-item" href="../home/checkprice.html">Weather</a>
                             <a class="dropdown-item" href="../home/checkprice.html">Price-Prediction</a>
+                            {% if user.is_authenticated %}
+                                <a class="dropdown-item" href="{% url 'logout' %}">Price-Prediction</a>
+                            {% endif %}
+
                         </div>
                     </li>
                 </ul>

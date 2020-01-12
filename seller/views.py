@@ -4,6 +4,7 @@ from django.contrib import messages
 from django.contrib.auth import authenticate,login,logout
 import requests
 import json
+from django.conf import settings
 from buyer.models import BuyerProfile
 from django.contrib.auth.decorators import login_required
 # Create your views here.

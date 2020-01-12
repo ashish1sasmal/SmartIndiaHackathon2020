@@ -2,7 +2,9 @@
 {% load static %}
 {% block content %}
 <script src="{% static 'buyer/js/cities.js' %}"></script>
-<img src="../../static/seller/images/signup-back.jpg" style="width:100% ; height:85%">
+<img src="https://static.wixstatic.com/media/ab4e4f_ab97fbadb4bf4faea2121b8c00884433~mv2.jpg"
+    style="width:100% ; height:85%">
+<!-- <img src="" style="width:100% ; height:81%"> -->
 <a name="buyer" class="login">
     <div id="singnup" class="container text-center mt-5" style="position: absolute ; left:7% ; top:13%">
         <h1>SIGN UP</h1>
@@ -29,7 +31,9 @@
                     <!-- <label for="email">Email</label><br> -->
                     {{form.email}}<br><br>
                     <!-- <label for="district" style="margin-top: -2%;">District</label> -->
-                    <select id="state" style="width:184px" class="form-control" name="district" required></select><br>
+                    <select id="state" style="width:184px" class="form-control" name="district" required>
+                    </select><br>
+
                     <!-- <label for="again password">ReEnter Password</label><br> -->
                     {{form.password2}}<br><br><label>
                 </div>
@@ -41,7 +45,9 @@
             </div>
             <script src='https://www.google.com/recaptcha/api.js'></script>
             <div class="g-recaptcha" style="margin-left: 36% ; margin-top:2%"
-                data-sitekey="6Ldjrc4UAAAAAPIfnXkHkPKpJwOV3yxkOXagmQwM"></div>
+                data-sitekey="6Ldjrc4UAAAAAPIfnXkHkPKpJwOV3yxkOXagmQwM">
+            </div>
+
             <button type="submit" class="btn btn-primary mt-4" id="signup-button">Sign Up</button>
         </form>
 
