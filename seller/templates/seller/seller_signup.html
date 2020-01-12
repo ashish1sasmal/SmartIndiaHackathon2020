@@ -18,12 +18,15 @@
             {{form.email}}<br>
             <label for="aadhar">Aadhar No.</label><br>
             {{sform.aadhar}}<br>
-            <label for="district">District</label><br>
-            <select name="state" onchange="print_city('state', this.selectedIndex);" id="sts" name ="stt" class="form-control" required></select><br>
-            <label for="district">District</label>
-            <select id ="state" class="form-control" name="district" required></select><br>
+            <label for="district">State</label><br>
+            <select name="state" style="width: 18%;margin-left: 41%;"
+                onchange="print_city('state', this.selectedIndex);" id="sts" name="stt" class="form-control"
+                required></select><br>
+            <label for="district" style="margin-top: -2%;">District</label>
+            <select id="state" style="width: 18%;margin-left: 41%;" class="form-control" name="district"
+                required></select><br>
             <script language="javascript">print_state("sts");</script>
-            <label for="password">Enter a Password</label><br>
+            <label for="password" style="margin-top: -2%;">Enter a Password</label><br>
             {{form.password1}}<br>
             <label for="again password">ReEnter Password</label><br>
             {{form.password2}}<br>
