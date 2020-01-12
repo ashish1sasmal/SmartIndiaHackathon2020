@@ -2,39 +2,46 @@
 {% load static %}
 {% block content %}
 <script src="{% static 'buyer/js/cities.js' %}"></script>
-
+<img src="../../static/seller/images/signup-back.jpg" style="width:100% ; height:85%">
 <a name="buyer" class="login">
-    <div id="singnup" class="container text-center mt-5">
+    <div id="singnup" class="container text-center mt-5" style="position: absolute ; left:7% ; top:13%">
         <h1>SIGN UP</h1>
-        <form method="POST">
-            {% csrf_token %}
-            <label for="firstname">First Name</label><br>
-            {{sform.first_name}}<br>
-            <label for="lastname">Last Name</label><br>
-            {{sform.last_name}}<br>
-            <label for="contact">Contact No.</label><br>
-            {{sform.phone}}<br>
-            <label for="email">Email</label><br>
-            {{form.email}}<br>
-            <label for="aadhar">Aadhar No.</label><br>
+        <form method="POST" class="mb-0">
+            <div class="row">
+                <div class="col-lg-6 text-right">
+                    {% csrf_token %}
+                    <!-- <label for="firstname">First Name</label><br> -->
+                    {{sform.first_name}}<br><br>
+
+                    <!-- <label for="contact">Contact No.</label><br> -->
+                    {{sform.phone}}<br><br>
+                    <!-- <label for="district">State</label><br> -->
+                    <select name="state" style="position: relative ; left:353px ; width:184px"
+                        onchange="print_city('state', this.selectedIndex);" id="sts" name="stt" class="form-control"
+                        required></select><br><label>
+                        <script language="javascript">print_state("sts");</script>
+                        <!-- <label for="password" style="margin-top: -2%;">Enter a Password</label><br> -->
+                        {{form.password1}}<br>
+                </div>
+                <div class="col-lg-6 text-left">
+                    <!-- <label for="lastname">Last Name</label><br> -->
+                    {{sform.last_name}}<br><br>
+                    <!-- <label for="email">Email</label><br> -->
+                    {{form.email}}<br><br>
+                    <!-- <label for="district" style="margin-top: -2%;">District</label> -->
+                    <select id="state" style="width:184px" class="form-control" name="district" required></select><br>
+                    <!-- <label for="again password">ReEnter Password</label><br> -->
+                    {{form.password2}}<br><br><label>
+                </div>
+            </div>
+            <!-- <label for="aadhar">Aadhar No.</label><br> -->
             {{sform.aadhar}}<br>
-            <label for="district">State</label><br>
-            <select name="state" style="width: 18%;margin-left: 41%;"
-                onchange="print_city('state', this.selectedIndex);" id="sts" name="stt" class="form-control"
-                required></select><br>
-            <label for="district" style="margin-top: -2%;">District</label>
-            <select id="state" style="width: 18%;margin-left: 41%;" class="form-control" name="district"
-                required></select><br>
-            <script language="javascript">print_state("sts");</script>
-            <label for="password" style="margin-top: -2%;">Enter a Password</label><br>
-            {{form.password1}}<br>
-            <label for="again password">ReEnter Password</label><br>
-            {{form.password2}}<br>
             <div class="alert alert-danger" id="alert" role="alert" style="display: none ; width:auto">
                 Passwords Did'nt Match ....Try Again
             </div>
             <script src='https://www.google.com/recaptcha/api.js'></script>
-            <div class="g-recaptcha" data-sitekey="6Ldjrc4UAAAAAPIfnXkHkPKpJwOV3yxkOXagmQwM"></div>
+            <div class="g-recaptcha" style="margin-left: 36% ; margin-top:2%"
+                data-sitekey="6Ldjrc4UAAAAAPIfnXkHkPKpJwOV3yxkOXagmQwM"></div>
             <button type="submit" class="btn btn-primary mt-4" id="signup-button">Sign Up</button>
         </form>
 
