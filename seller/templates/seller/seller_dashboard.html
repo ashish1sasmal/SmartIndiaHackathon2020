@@ -3,71 +3,155 @@
 
 {% block content %}
 
-    <div id="content">
+<div id="content">
 
-        <span class="slide">
-            <a href="#" onclick="openSlideMenu()">
-                <i class="fas fa-bars"></i>
-            </a>
-        </span>
+    <span class="slide">
+        <a href="#" onclick="openSlideMenu()">
+            <i class="fas fa-bars"></i>
+        </a>
+    </span>
 
-        <div id="menu" class="nav">
-            <a href="#" class="close" onclick="closeSlideMenu()">
-                <i class="fas fa-times"></i>
-            </a>
-            <a
-                href="#">
-                Dashboard&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</a>
-            <a href="{% url 'seller:sell' %}" onclick="sell_click()">Sell
-                Commodity&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</a>
-            <a
-                href="#">Complete&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</a>
-            <a
-                href="#">InProgress&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</a>
-        </div>
-
-        <section class="menu-section" id="dashboard">
-
-        </section>
-
-        <section class="menu-section" id="complete">
-
-        </section>
-
-        <section class="menu-section" id="inprogress">
-
-        </section>
-
-
-
+    <div id="menu" class="nav">
+        <a href="#" class="close" onclick="closeSlideMenu()">
+            <i class="fas fa-times"></i>
+        </a>
+        <a href="#">
+            Dashboard&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</a>
+        <a href="{% url 'seller:sell' %}" onclick="sell_click()">Sell
+            Commodity&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</a>
+        <a
+            href="#">Complete&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</a>
+        <a
+            href="#">InProgress&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</a>
     </div>
 
-    <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
-    <script>
-        function openSlideMenu() {
-            document.getElementById('menu').style.width = '250px';
-            document.getElementById('content').style.marginLeft = '250px';
-        }
-        function closeSlideMenu() {
-            document.getElementById('menu').style.width = '0';
-            document.getElementById('content').style.marginLeft = '0';
-        }
-        function next() {
-            document.getElementById('second-div').style.display = "block"
-        }
-        function sell_click() {
-            document.getElementById("sell").style.display = "block"
-        }
-    </script>
+    <section class="menu-section" id="dashboard">
 
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-        crossorigin="anonymous"></script>
+    </section>
+
+    <section class="menu-section" id="complete">
+
+    </section>
+
+    <section class="menu-section" id="inprogress">
+
+    </section>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 text-center">
+                <div class="card">
+                    <div class="card-header">
+                        Space
+                    </div>
+                    <div class="card-body">
+                        <blockquote class="blockquote mb-0">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-1 text-center"></div>
+            <div class="col-lg-3 text-center">
+                <div class="card">
+                    <div class="card-header">
+                        Space
+                    </div>
+                    <div class="card-body">
+                        <blockquote class="blockquote mb-0">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-1"></div>
+            <div class="col-lg-3 text-center">
+                <div class="card">
+                    <div class="card-header">
+                        Space
+                    </div>
+                    <div class="card-body">
+                        <blockquote class="blockquote mb-0">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-1"></div>
+        </div>
+        <div class="row mt-5">
+                <div class="col-lg-3 text-center">
+                    <div class="card">
+                        <div class="card-header">
+                            Space
+                        </div>
+                        <div class="card-body">
+                            <blockquote class="blockquote mb-0">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+                            </blockquote>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-1 text-center"></div>
+                <div class="col-lg-3 text-center">
+                    <div class="card">
+                        <div class="card-header">
+                            Space
+                        </div>
+                        <div class="card-body">
+                            <blockquote class="blockquote mb-0">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+                            </blockquote>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-1"></div>
+                <div class="col-lg-3 text-center">
+                    <div class="card">
+                        <div class="card-header">
+                            Space
+                        </div>
+                        <div class="card-body">
+                            <blockquote class="blockquote mb-0">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+                            </blockquote>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-1"></div>
+            </div>
+    </div>
+
+
+
+</div>
+
+<script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+<script>
+    function openSlideMenu() {
+        document.getElementById('menu').style.width = '250px';
+        document.getElementById('content').style.marginLeft = '250px';
+    }
+    function closeSlideMenu() {
+        document.getElementById('menu').style.width = '0';
+        document.getElementById('content').style.marginLeft = '0';
+    }
+    function next() {
+        document.getElementById('second-div').style.display = "block"
+    }
+    function sell_click() {
+        document.getElementById("sell").style.display = "block"
+    }
+</script>
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
 
 {% endblock content %}
