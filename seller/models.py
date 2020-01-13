@@ -8,7 +8,7 @@ def generateUUID():
 # Create your models here.
 
 class SellerProfile(models.Model):
-    sid=models.CharField(max_length=10, blank=True, unique=True, default='S'+get_random_string(8).upper())
+    sid=models.CharField(max_length=10, blank=True,  default='S'+get_random_string(8).upper())
     user=models.OneToOneField(User,on_delete=models.CASCADE)
     first_name=models.CharField(max_length=30)
     last_name=models.CharField(max_length=30)
