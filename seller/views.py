@@ -25,10 +25,11 @@ def price(loc):
 
     return([l,data['updated_date']])
 
-
+@login_required
 def dashboard(request):
     return render(request,'seller/seller_dashboard.html')
 
+@login_required
 def sell(request):
     state=None
     district=None
@@ -102,7 +103,7 @@ def user_login(request):
             if user.is_active and user.sellerprofile.is_seller:
                 login(request, user)
                 messages.success(request, f'You are logged in successfully!')
-                return redirect('home')
+                return redirect('seller:dashboard')
 
         else:
             messages.error(request,'Please Check your username and password !')
